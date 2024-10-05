@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Creature" load_steps=5 format=3]
+
+[ext_resource type="Texture2D" path="res://Assets/CharacterSprites/Creatures/Creature_0.png" id="1_facjk"]
+[ext_resource type="Texture2D" path="res://Assets/CharacterSprites/Creatures/Seedling.png" id="2_wtw4m"]
+[ext_resource type="Texture2D" path="res://Assets/CharacterSprites/Creatures/Sproutling.png" id="3_nko8k"]
+[ext_resource type="Script" path="res://Scripts/Creatures/Creature.gd" id="4_jh0hu"]
+
+[resource]
+script = ExtResource("4_jh0hu")
+Name = "RealBoy"
+SeedSprite = ExtResource("2_wtw4m")
+SproutSrite = ExtResource("3_nko8k")
+GrownSprite = ExtResource("1_facjk")
+GrowthStage = 0
+GrowthSpeed = 1
+Blood = 0.0
+Phlegm = 0.0
+YellowBile = 0.0
+BlackBile = 0.0

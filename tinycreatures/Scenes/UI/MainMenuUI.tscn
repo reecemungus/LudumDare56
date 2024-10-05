@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://xy6nqcopohnm"]
+
+[ext_resource type="Texture2D" uid="uid://bbotepje3fa2g" path="res://Assets/UI/ButtonRect.png" id="1_7jdgf"]
+[ext_resource type="Script" path="res://Scripts/UI/MainMenuUI.gd" id="1_d3wg6"]
+[ext_resource type="Theme" uid="uid://btsucjh5vgxgy" path="res://Assets/UI/Theme/UITheme.tres" id="1_mnwp5"]
+[ext_resource type="Script" path="res://Scripts/HoverUI.gd" id="3_t737t"]
+
+[node name="MainMenuUi" type="CanvasLayer"]
+script = ExtResource("1_d3wg6")
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Background" type="ColorRect" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.0313726, 0, 0.0862745, 1)
+
+[node name="Title" type="Label" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.278646
+anchor_top = 0.0987654
+anchor_right = 0.721354
+anchor_bottom = 0.33179
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_mnwp5")
+text = "GravelHeir"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.298611
+anchor_right = 0.701389
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StartGame" type="Button" parent="MainMenu/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("1_mnwp5")
+text = "Start Game"
+script = ExtResource("3_t737t")
+
+[node name="StartButton" type="NinePatchRect" parent="MainMenu/VBoxContainer/StartGame"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_mnwp5")
+texture = ExtResource("1_7jdgf")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[connection signal="mouse_entered" from="MainMenu/VBoxContainer/StartGame" to="MainMenu/VBoxContainer/StartGame" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/VBoxContainer/StartGame" to="MainMenu/VBoxContainer/StartGame" method="_on_mouse_exited"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="resized" from="MainMenu/VBoxContainer/StartGame" to="MainMenu/VBoxContainer/StartGame" method="_on_resized"]

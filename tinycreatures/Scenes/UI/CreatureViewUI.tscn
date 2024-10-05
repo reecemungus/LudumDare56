@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=3 uid="uid://conr6rnas6on8"]
+
+[ext_resource type="Texture2D" uid="uid://bt6toh1j2rhj" path="res://Assets/UI/HumorBox.png" id="1_qlm5s"]
+[ext_resource type="Theme" uid="uid://btsucjh5vgxgy" path="res://Assets/UI/Theme/UITheme.tres" id="2_fh5uy"]
+
+[node name="CreatureViewUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 20
+columns = 4
+
+[node name="BloodBox" type="AspectRatioContainer" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Red" type="TextureRect" parent="CenterContainer/GridContainer/BloodBox"]
+layout_mode = 2
+texture = ExtResource("1_qlm5s")
+metadata/_edit_use_anchors_ = true
+
+[node name="PhlegmBox" type="AspectRatioContainer" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Blue" type="TextureRect" parent="CenterContainer/GridContainer/PhlegmBox"]
+layout_mode = 2
+texture = ExtResource("1_qlm5s")
+metadata/_edit_use_anchors_ = true
+
+[node name="YellowBileBox" type="AspectRatioContainer" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Yellow" type="TextureRect" parent="CenterContainer/GridContainer/YellowBileBox"]
+layout_mode = 2
+texture = ExtResource("1_qlm5s")
+metadata/_edit_use_anchors_ = true
+
+[node name="BlackBileBox" type="AspectRatioContainer" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Black" type="TextureRect" parent="CenterContainer/GridContainer/BlackBileBox"]
+layout_mode = 2
+texture = ExtResource("1_qlm5s")
+metadata/_edit_use_anchors_ = true
+
+[node name="Blood" type="Label" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+theme = ExtResource("2_fh5uy")
+theme_override_colors/font_color = Color(0.678431, 0.262745, 0.32549, 1)
+theme_override_colors/font_shadow_color = Color(0.0313726, 0, 0.0862745, 1)
+theme_override_font_sizes/font_size = 24
+text = "Blood"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Phlegm" type="Label" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+theme = ExtResource("2_fh5uy")
+theme_override_colors/font_color = Color(0.101961, 0.14902, 0.478431, 1)
+theme_override_colors/font_shadow_color = Color(0.0313726, 0, 0.0862745, 1)
+theme_override_font_sizes/font_size = 24
+text = "Phlegm"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="YellowBile" type="Label" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+theme = ExtResource("2_fh5uy")
+theme_override_colors/font_color = Color(0.698039, 0.580392, 0.164706, 1)
+theme_override_colors/font_shadow_color = Color(0.0313726, 0, 0.0862745, 1)
+theme_override_font_sizes/font_size = 24
+text = "Yellow Bile"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BlackBile" type="Label" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+theme = ExtResource("2_fh5uy")
+theme_override_colors/font_color = Color(0.309804, 0.286275, 0.278431, 1)
+theme_override_colors/font_shadow_color = Color(0.0313726, 0, 0.0862745, 1)
+theme_override_font_sizes/font_size = 24
+text = "Black Bile"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

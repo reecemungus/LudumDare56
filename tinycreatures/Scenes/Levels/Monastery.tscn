@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://0a33ng88qnke"]
+
+[ext_resource type="PackedScene" uid="uid://dws72x71tcp8a" path="res://Scenes/TileMaps/MonasteryTileMap.tscn" id="1_3hvqa"]
+[ext_resource type="Script" path="res://Scripts/Levels/MonasteryLevelScript.gd" id="1_4lklq"]
+[ext_resource type="PackedScene" uid="uid://crx6wwvgje66u" path="res://Scenes/Characters/MonkPlayer.tscn" id="2_ed1so"]
+[ext_resource type="PackedScene" uid="uid://q6v1fnxj5f0" path="res://Scenes/Creatures/CreatureCharacter.tscn" id="3_ju2d0"]
+[ext_resource type="PackedScene" uid="uid://cmiq3fyw7o7eh" path="res://Scenes/TileMaps/Props/Bed.tscn" id="4_7lr0l"]
+
+[node name="MonasteryScene" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_4lklq")
+
+[node name="MonkPlayer" parent="." instance=ExtResource("2_ed1so")]
+
+[node name="MonasteryTileMap" parent="." instance=ExtResource("1_3hvqa")]
+
+[node name="Creature" parent="." instance=ExtResource("3_ju2d0")]
+position = Vector2(-145, 37)
+
+[node name="Bed" parent="." instance=ExtResource("4_7lr0l")]
+position = Vector2(-16, 72)

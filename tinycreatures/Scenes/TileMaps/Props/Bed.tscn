@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmiq3fyw7o7eh"]
+
+[ext_resource type="Texture2D" uid="uid://dklljrhvf1pnl" path="res://Assets/Props/PropMap.png" id="1_cd0b3"]
+[ext_resource type="Script" path="res://Scripts/Props/Bed.gd" id="1_nvg3m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iubm6"]
+radius = 13.0
+height = 44.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2r5k"]
+size = Vector2(16, 28)
+
+[node name="Bed" type="Area2D" groups=["G_Interactable"]]
+script = ExtResource("1_nvg3m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_iubm6")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_cd0b3")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_q2r5k")
