@@ -4,6 +4,9 @@ class_name ScreenFade
 func _ready() -> void:
 	SignalBus.FadeIn.connect(FadeIn)
 	SignalBus.Sleep.connect(OnPlayerSlept)
+	
+	if OS.has_feature("editor"):
+		visible = false
 
 func OnPlayerSlept() -> void:
 	%AnimationPlayer.current_animation = "SleepFade"
