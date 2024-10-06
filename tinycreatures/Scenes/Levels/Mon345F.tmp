@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://0a33ng88qnke"]
+[gd_scene load_steps=6 format=3 uid="uid://0a33ng88qnke"]
 
 [ext_resource type="PackedScene" uid="uid://dws72x71tcp8a" path="res://Scenes/TileMaps/MonasteryTileMap.tscn" id="1_3hvqa"]
 [ext_resource type="Script" path="res://Scripts/Levels/MonasteryLevelScript.gd" id="1_4lklq"]
 [ext_resource type="PackedScene" uid="uid://crx6wwvgje66u" path="res://Scenes/Characters/MonkPlayer.tscn" id="2_ed1so"]
 [ext_resource type="PackedScene" uid="uid://cmiq3fyw7o7eh" path="res://Scenes/TileMaps/Props/Bed.tscn" id="4_7lr0l"]
-[ext_resource type="PackedScene" uid="uid://ca6iacjtpxnd7" path="res://Scenes/Characters/NPC.tscn" id="5_y3e1x"]
-[ext_resource type="PackedScene" uid="uid://q6v1fnxj5f0" path="res://Scenes/Creatures/CreatureCharacter.tscn" id="6_sbwuv"]
-[ext_resource type="Resource" uid="uid://bous82rkxr62o" path="res://Scenes/Characters/Alchemist.tres" id="7_hfq08"]
+[ext_resource type="PackedScene" uid="uid://ca6iacjtpxnd7" path="res://Scenes/Characters/NPCShopkeeper.tscn" id="5_y3e1x"]
 
 [node name="MonasteryScene" type="Node2D"]
 y_sort_enabled = true
@@ -21,13 +19,3 @@ position = Vector2(-16, 72)
 
 [node name="FarmerNPC" parent="." instance=ExtResource("5_y3e1x")]
 position = Vector2(-96, -96)
-
-[node name="Creature" parent="." instance=ExtResource("6_sbwuv")]
-position = Vector2(-84, 25)
-
-[node name="Creature2" parent="." instance=ExtResource("6_sbwuv")]
-position = Vector2(-130, 18)
-
-[node name="AlchemistNPC" parent="." instance=ExtResource("5_y3e1x")]
-position = Vector2(127, -74)
-npc = ExtResource("7_hfq08")

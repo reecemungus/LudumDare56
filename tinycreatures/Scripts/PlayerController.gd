@@ -8,9 +8,12 @@ const SPEED = 5000.0
 const SLOWVAL = 500.0
 
 var canMove : bool = true
+var boundCreature : Creature
 
 func _ready() -> void:
 	SignalBus.FreezePlayer.connect(FreezePlayer)
+	SignalBus.BindCreatureToPlayer.connect(BindCreature)
+	SignalBus.OnPlayerReleaseCreature.connect(ClearBoundCreature)
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
@@ -29,6 +32,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact"):
 		var area : Area2D = FindInput()
 		if area: SignalBus.OnPlayerInteract.emit(area)
+	if event.is_action_pressed("Drag"):
+		if boundCreature == null:
+			var area : Area2D = FindInput()
+			if area: SignalBus.OnPlayerDrag.emit(area)
+		else:
+			SignalBus.OnPlayerReleaseCreature.emit()
 
 func FindInput() -> Area2D: # Finds closes area 2D
 	var ungroupedAreas : Array[Area2D] = %InteractionZone.get_overlapping_areas()
@@ -47,3 +56,9 @@ func PlayFootstepSound() -> void:
 
 func FreezePlayer(input : bool = false) -> void:
 	canMove = input
+
+func BindCreature(creature : Creature) -> void:
+	boundCreature = creature
+
+func ClearBoundCreature() -> void:
+	boundCreature = null

@@ -20,21 +20,26 @@ var growthPoints : int = 5 # When this hits 0, the GrowthStage will Increment
 @export var YellowBile : float = 0.0 # liver, yellow
 @export var BlackBile : float = 0.0 # spleen, black
 
+@export var CreatureValue : int
+
 func _init() -> void:
-	var tempSprite : CreatureSpriteArray = load("res://Scripts/Creatures/CreatureSprites.tres")
-	GrownSprite = tempSprite.GetRandomSprite()
+	var creatureAes : CreatureAesthetics = load("res://Scripts/Creatures/CreatureSprites.tres")
+	GrownSprite = creatureAes.GetRandomSprite()
+	
+	Name = creatureAes.GetRandomName()
 	
 	AssignInitialStats()
+	CalculateValue()
 	
 	SignalBus.OnSleep.connect(OnSleep)
 
 func AssignInitialStats() -> void:
 	var mult := Player.multiplier
 	
-	Blood = randf_range(mult / 2, mult)
-	Phlegm = randf_range(mult / 2, mult)
-	YellowBile = randf_range(mult / 2, mult)
-	BlackBile = randf_range(mult / 2, mult)
+	Blood = randf_range(mult / 4, mult)
+	Phlegm = randf_range(mult / 4, mult)
+	YellowBile = randf_range(mult / 4, mult)
+	BlackBile = randf_range(mult / 4, mult)
 	
 	GrowthSpeed = randi_range(1, 3)
 
@@ -57,3 +62,9 @@ func AdvanceGrowthStage() -> void:
 			GrowthStage = Game.GrowthStage.GROWN
 		Game.GrowthStage.GROWN:
 			pass
+
+func CalculateValue() -> int:
+	var tempVal : float = ((Blood + Phlegm + YellowBile + BlackBile) / 4)
+	CreatureValue = floorf(tempVal)
+	
+	return CreatureValue

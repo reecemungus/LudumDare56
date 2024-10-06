@@ -1,0 +1,125 @@
+[gd_scene load_steps=16 format=3 uid="uid://bg5kqew78fxqj"]
+
+[ext_resource type="Script" path="res://Scripts/UI/FarmerUnavailableUI.gd" id="1_ffuex"]
+[ext_resource type="Texture2D" uid="uid://cmlrta1lfnanq" path="res://Assets/UI/PaperRect.png" id="1_wd5hx"]
+[ext_resource type="FontVariation" uid="uid://b1xenlah75lik" path="res://Assets/UI/Theme/GothicFont.tres" id="2_nlwfw"]
+[ext_resource type="Script" path="res://Scripts/HoverUI.gd" id="3_ckt60"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_do54a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jmrkd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hys63"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hv6n3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opu6o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x65q4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qlggd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hy7xo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sgo2a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7y21u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7cl0"]
+
+[node name="FarmerUnavailable" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ffuex")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.025
+anchor_right = 0.8
+anchor_bottom = 0.975
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wd5hx")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0486111
+anchor_top = 0.0300752
+anchor_right = 0.947917
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Filler" type="Label" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.443137, 0.172549, 0.211765, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nlwfw")
+text = "Request for Butchery:
+
+Bring me one of your creations. I will pay most handsomely for it's flesh."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Accept" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.443137, 0.172549, 0.211765, 1)
+theme_override_colors/font_shadow_color = Color(0.0313726, 0, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("2_nlwfw")
+text = "I Accept"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_ckt60")
+
+[node name="Accept" type="Button" parent="NinePatchRect/VBoxContainer/Accept"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("2_nlwfw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_do54a")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_jmrkd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hys63")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_hv6n3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_opu6o")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_x65q4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qlggd")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_hy7xo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sgo2a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_7y21u")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e7cl0")
+flat = true
+icon_alignment = 1
+
+[connection signal="mouse_entered" from="NinePatchRect/VBoxContainer/Accept" to="NinePatchRect/VBoxContainer/Accept" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/VBoxContainer/Accept" to="NinePatchRect/VBoxContainer/Accept" method="_on_mouse_exited"]
+[connection signal="resized" from="NinePatchRect/VBoxContainer/Accept" to="NinePatchRect/VBoxContainer/Accept" method="_on_resized"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/Accept/Accept" to="." method="_on_accept_pressed"]

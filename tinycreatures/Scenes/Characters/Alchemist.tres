@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NPC" load_steps=3 format=3 uid="uid://bous82rkxr62o"]
+
+[ext_resource type="Script" path="res://Scripts/NPCs/NPC.gd" id="1_3hm0l"]
+[ext_resource type="Texture2D" uid="uid://deglmasco8ne2" path="res://Assets/CharacterSprites/Alchemist.png" id="1_ptmg1"]
+
+[resource]
+script = ExtResource("1_3hm0l")
+Sprite = ExtResource("1_ptmg1")
+NPCType = 1

@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhw1fexc1dpwf"]
+
+[ext_resource type="Script" path="res://Scripts/UI/PlayerHUD.gd" id="1_vi4xf"]
+[ext_resource type="FontVariation" uid="uid://b1xenlah75lik" path="res://Assets/UI/Theme/GothicFont.tres" id="2_1pyoe"]
+
+[node name="PlayerHUDUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vi4xf")
+
+[node name="Coins" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.65
+anchor_top = 0.65
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GoldCount" type="Label" parent="Coins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0694444
+anchor_top = 0.357143
+anchor_right = 1.06944
+anchor_bottom = 1.11905
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0.835294, 0.254902, 1)
+theme_override_colors/font_shadow_color = Color(0.0313726, 0, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("2_1pyoe")
+theme_override_font_sizes/font_size = 48
+text = "25"
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

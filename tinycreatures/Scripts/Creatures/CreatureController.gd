@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 class_name CreatureController
 
 ### INFO 
@@ -6,10 +6,28 @@ class_name CreatureController
 
 var creatureRes : Creature = Creature.new()
 
+@onready var player : PlayerController = get_tree().get_first_node_in_group("G_PlayerController")
+var isBoundToPlayer : bool = false
+
+var targetLocation : Vector2
+
 func _ready() -> void:
 	ResourceSaver.save(creatureRes, "res://Scenes/Creatures/testCreature.tres")
 	
 	SignalBus.CreatureUpdateSprite.connect(UpdateSprite)
+	SignalBus.OnPlayerReleaseCreature.connect(OnDragEnd)
+	SignalBus.KillBoundCreature.connect(KillBoundCreature)
+
+func _physics_process(delta: float) -> void:
+	var distanceToPlayer : Vector2 = player.global_position - global_position
+	
+	if isBoundToPlayer && distanceToPlayer.length() > 2.0:
+		targetLocation = ConstrainDistance(global_position, player.global_position, 5.0)
+		velocity = distanceToPlayer.normalized() * 4000 * delta
+	else:
+		velocity = Vector2.ZERO
+	
+	move_and_slide()
 
 func UpdateSprite() -> void:
 	match creatureRes.GrowthStage:
@@ -20,8 +38,33 @@ func UpdateSprite() -> void:
 		Game.GrowthStage.GROWN:
 			%CreatureSprite.texture = creatureRes.GrownSprite
 
-func OnSleep() -> void:
-	pass
+func OnInteract() -> void:	
+	var CREATUREVIEWUI = preload("res://Scenes/UI/CreatureViewUI.tscn").instantiate()
+	var PlayerHud : CanvasLayer = get_tree().get_first_node_in_group("G_PlayerHUD")
+	
+	CREATUREVIEWUI.creature = creatureRes
+	PlayerHud.add_child(CREATUREVIEWUI)
 
-func OnInteract() -> void:
-	print("YAY")
+func OnDrag() -> void:
+	AudioManager.playSoundAtLocation(global_position, "res://Assets/Audio/Pickup.wav")
+	
+	isBoundToPlayer = true
+	SignalBus.BindCreatureToPlayer.emit(creatureRes)
+	
+	%InteractArea.set_collision_layer_value(1, false)
+	%InteractArea.set_collision_mask_value(1, false)
+
+func OnDragEnd() -> void:
+	AudioManager.playSoundAtLocation(global_position, "res://Assets/Audio/Drop.wav")
+	
+	isBoundToPlayer = false
+	
+	%InteractArea.set_collision_layer_value(1, true)
+	%InteractArea.set_collision_mask_value(1, true)
+
+func KillBoundCreature() -> void:
+	if isBoundToPlayer:
+		queue_free()
+
+func ConstrainDistance(point : Vector2, anchor : Vector2, distance : float) -> Vector2:
+	return ((point - anchor).normalized() * distance) + anchor

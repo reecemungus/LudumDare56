@@ -6,7 +6,15 @@ extends Node
 signal OnPlayerInteract(area : Area2D)
 signal FreezePlayer(input : bool)
 
+signal OnPlayerDrag(area : Area2D)
+signal OnPlayerReleaseCreature
+
+signal BindCreatureToPlayer(creature : Creature)
+signal KillBoundCreature
+
 signal CreatureUpdateSprite
+
+signal UpdateGoldCount
 
 signal Sleep # Start sleep animations etc
 signal OnSleep # Call sleep logic
@@ -26,7 +34,12 @@ func _ready() -> void:
 	screenFade = tempFade
 	
 	OnPlayerInteract.connect(InteractPassThrough)
+	OnPlayerDrag.connect(DragPassThrough)
 
 func InteractPassThrough(area : Area2D) -> void: # Call interact function on area
 	if area.has_method("OnInteract"):
 		area.OnInteract()
+
+func DragPassThrough(area : Area2D) -> void: # Call interact function on area
+	if area.has_method("OnDrag"):
+		area.OnDrag()

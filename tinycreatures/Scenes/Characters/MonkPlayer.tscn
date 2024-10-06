@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/PlayerController.gd" id="1_hqtrt"]
 [ext_resource type="Texture2D" uid="uid://03aa8irigggt" path="res://Assets/CharacterSprites/Monk.png" id="1_qdqdo"]
-[ext_resource type="PackedScene" uid="uid://conr6rnas6on8" path="res://Scenes/UI/CreatureViewUI.tscn" id="2_dk6gm"]
+[ext_resource type="PackedScene" uid="uid://bhw1fexc1dpwf" path="res://Scenes/UI/PlayerHUD.tscn" id="2_2a88j"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerAnimation.gd" id="2_gxijk"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xq23m"]
@@ -29,8 +29,8 @@ tracks/0/path = NodePath("Sprite:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.333333, 0, 0, -0.333333, 0, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/1/type = "bezier"
@@ -40,8 +40,8 @@ tracks/1/path = NodePath("Sprite:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.333333, 0, 0, -0.333333, 0, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/2/type = "bezier"
@@ -51,8 +51,8 @@ tracks/2/path = NodePath("Sprite:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.333333, 0, 0, -0.333333, 0, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/3/type = "bezier"
@@ -62,8 +62,8 @@ tracks/3/path = NodePath("Sprite:scale:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(1, 0, 0, 0.166667, 0, 1.1, -0.166667, 0, 0.166667, 0, 1, -0.166667, 0, 0, 0),
 "times": PackedFloat32Array(0, 0.5, 1)
 }
 tracks/4/type = "bezier"
@@ -73,8 +73,8 @@ tracks/4/path = NodePath("Sprite:scale:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.9, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(1, 0, 0, 0.166667, 0, 0.9, -0.166667, 0, 0.166667, 0, 1, -0.166667, 0, 0, 0),
 "times": PackedFloat32Array(0, 0.5, 1)
 }
 
@@ -148,7 +148,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(2, 2, 2, 2),
-"points": PackedFloat32Array(0, 0, 0, 0.0833333, 0, 0, -0.0833333, 0, 0.0833333, 0, 0, -0.0833333, 0, 0.0833333, 0, 0, -0.0833333, 0, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.0833333, 0, 0, -0.0833333, 0, 0.166667, 0, 0, -0.166667, 0, 0.0833333, 0, 0, -0.0833333, 0, 0, 0),
 "times": PackedFloat32Array(0, 0.25, 0.75, 1)
 }
 tracks/1/type = "bezier"
@@ -180,8 +180,8 @@ tracks/3/path = NodePath("Sprite:scale:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(2, 0, 0, 0, 2),
-"points": PackedFloat32Array(1, 0, 0, 0.333333, 0, 0.9, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0.9, -0.25, 0, 0.25, 0, 1, -0.333333, 0, 0, 0),
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2),
+"points": PackedFloat32Array(1, 0, 0, 0.0833333, 0, 0.9, -0.0833333, 0, 0.0833333, 0, 1, -0.0833333, 0, 0.0833333, 0, 0.9, -0.0833333, 0, 0.0833333, 0, 1, -0.0833333, 0, 0, 0),
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
 }
 tracks/4/type = "bezier"
@@ -191,8 +191,8 @@ tracks/4/path = NodePath("Sprite:scale:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(2, 0, 0, 0, 2),
-"points": PackedFloat32Array(1, 0, 0, 0.333333, 0, 1.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1.1, -0.25, 0, 0.25, 0, 1, -0.333333, 0, 0, 0),
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2),
+"points": PackedFloat32Array(1, 0, 0, 0.0833333, 0, 1.1, -0.0833333, 0, 0.0833333, 0, 1, -0.0833333, 0, 0.0833333, 0, 1.1, -0.0833333, 0, 0.0833333, 0, 1, -0.0833333, 0, 0, 0),
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
 }
 tracks/5/type = "method"
@@ -237,7 +237,7 @@ script = ExtResource("1_hqtrt")
 
 [node name="PlayerHUD" type="CanvasLayer" parent="." groups=["G_PlayerHUD"]]
 
-[node name="CreatureViewUI" parent="PlayerHUD" instance=ExtResource("2_dk6gm")]
+[node name="PlayerHUDUI" parent="PlayerHUD" instance=ExtResource("2_2a88j")]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendSpace1D_r3idh")
