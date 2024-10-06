@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPC" load_steps=4 format=3 uid="uid://del4le2aiv0gi"]
+
+[ext_resource type="Texture2D" uid="uid://ouvkx7itne4n" path="res://Assets/CharacterSprites/Knight.png" id="1_gawvr"]
+[ext_resource type="PackedScene" uid="uid://ci3jp78hh2pab" path="res://Scenes/UI/KnightShopUI.tscn" id="1_hqoix"]
+[ext_resource type="Script" path="res://Scripts/NPCs/NPC.gd" id="1_kr3ou"]
+
+[resource]
+script = ExtResource("1_kr3ou")
+Sprite = ExtResource("1_gawvr")
+NPCType = 2
+ShopkeeperScene = ExtResource("1_hqoix")

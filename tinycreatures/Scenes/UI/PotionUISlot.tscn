@@ -1,0 +1,81 @@
+[gd_scene load_steps=14 format=3 uid="uid://r6v0pe6ljak0"]
+
+[ext_resource type="Texture2D" uid="uid://cy3qvn5qio4gg" path="res://Assets/Potions/Blood.png" id="1_00fdq"]
+[ext_resource type="Script" path="res://Scripts/UI/PotionUISlot.gd" id="1_4jbnu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4dbuw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ofxb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6urm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_58whj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxvhe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hps16"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ose3i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4n1e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uirn8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_54udn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hausj"]
+
+[node name="PotionUISlot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("1_4jbnu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4dbuw")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_4ofxb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_b6urm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_58whj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gxvhe")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hps16")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ose3i")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_o4n1e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uirn8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_54udn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hausj")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_00fdq")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

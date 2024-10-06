@@ -21,10 +21,12 @@ AudioManager="*res://Scripts/AutoLoad/audio_manager.gd"
 SignalBus="*res://Scripts/AutoLoad/signal_bus.gd"
 Player="*res://Scripts/AutoLoad/player.gd"
 Game="*res://Scripts/AutoLoad/game.gd"
+AlchemistInventory="*res://Scripts/AutoLoad/alchemist_inventory.gd"
 
 [debug]
 
 gdscript/warnings/unused_signal=0
+gdscript/warnings/narrowing_conversion=0
 
 [display]
 
@@ -48,6 +50,7 @@ folder_colors={
 G_PlayerController=""
 G_Interactable=""
 G_PlayerHUD=""
+G_Level=""
 
 [input]
 

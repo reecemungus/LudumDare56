@@ -12,7 +12,6 @@ func _ready() -> void:
 func _on_accept_pressed() -> void:
 	Player.addMoney(player.boundCreature.CalculateValue())
 	
-	SignalBus.UpdateGoldCount.emit()
 	SignalBus.KillBoundCreature.emit()
 	
 	queue_free()

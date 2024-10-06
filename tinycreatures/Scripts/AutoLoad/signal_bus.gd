@@ -13,14 +13,21 @@ signal BindCreatureToPlayer(creature : Creature)
 signal KillBoundCreature
 
 signal CreatureUpdateSprite
+signal CreatureUpdateHumors
 
 signal UpdateGoldCount
+
+signal AlchemistShopHoverPotion(potion : Potion)
+signal AlchemistShopStopHover
+signal AlchemistShopOnRestock
 
 signal Sleep # Start sleep animations etc
 signal OnSleep # Call sleep logic
 
 signal FadeIn
 signal FadeOut
+
+signal EndGame
 
 var screenFadeScene := preload("res://Scenes/screen_fade.tscn")
 var screenFade : ScreenFade
@@ -35,6 +42,7 @@ func _ready() -> void:
 	
 	OnPlayerInteract.connect(InteractPassThrough)
 	OnPlayerDrag.connect(DragPassThrough)
+	EndGame.connect(OnEndGame)
 
 func InteractPassThrough(area : Area2D) -> void: # Call interact function on area
 	if area.has_method("OnInteract"):
@@ -43,3 +51,6 @@ func InteractPassThrough(area : Area2D) -> void: # Call interact function on are
 func DragPassThrough(area : Area2D) -> void: # Call interact function on area
 	if area.has_method("OnDrag"):
 		area.OnDrag()
+
+func OnEndGame() -> void:
+	FadeOut.emit()

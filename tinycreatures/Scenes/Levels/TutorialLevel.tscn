@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://chhm4hfh6didg"]
+
+[ext_resource type="Script" path="res://Scripts/Levels/TutorialLevelScript.gd" id="1_3ft7j"]
+[ext_resource type="Texture2D" uid="uid://dwsaenhq8ft1l" path="res://Assets/CharacterSprites/King.png" id="1_606ol"]
+[ext_resource type="Texture2D" uid="uid://bbotepje3fa2g" path="res://Assets/UI/ButtonRect.png" id="2_ayfe4"]
+[ext_resource type="FontVariation" uid="uid://b1xenlah75lik" path="res://Assets/UI/Theme/GothicFont.tres" id="3_q5nvp"]
+
+[node name="TutorialLevel" type="Node2D"]
+script = ExtResource("1_3ft7j")
+text = Array[String](["Greetings, Father. Tis I, your King.", "I have a task for you, something that can only be done by someone Holy as thou.", "I have been forsaken by my people, in being denied a worthy Heir.", "It is my wish that you, father, create an heir for me.", "You will create life from the ground, using a Saplings granted to you by myself.", "I will grant you the use of my grounds, there, you will find all you need to complete my task.", "The South-Western building will serve as your Quarters. Sleep there to pass the time. ", "The North-Western Building houses our farmer, he will make good use of any plant scraps you want rid of.", "In the North-East, you will find the Alchemist. They will help augment your spawn, as well as yourself.", "The more Holy you become through the use of Holy Elixir, the better you will become at tending these creatures.", "Finally, you may find me and one of my Knights in the South-Eastern Building.", "Speak to my knight if you require more Sprouts, and speak to me when you have created the perfect Heir.", "Good luck, Father."])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0313726, 0, 0.0862745, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.164286
+anchor_right = 0.6
+anchor_bottom = 0.542857
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_606ol")
+expand_mode = 4
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 171.0
+offset_right = -43.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ayfe4")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/NinePatchRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.952941, 0.980392, 0.909804, 1)
+theme_override_colors/font_shadow_color = Color(0.0313726, 0, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("3_q5nvp")
+theme_override_font_sizes/font_size = 20
+text = "OK Bruh"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

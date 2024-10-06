@@ -1,20 +1,20 @@
-[gd_resource type="Resource" script_class="Creature" load_steps=5 format=3]
+[gd_resource type="Resource" script_class="Creature" load_steps=5 format=3 uid="uid://c2hktj5bcvm5e"]
 
-[ext_resource type="Texture2D" path="res://Assets/CharacterSprites/Creatures/Creature_0.png" id="1_7el3q"]
-[ext_resource type="Texture2D" path="res://Assets/CharacterSprites/Creatures/Seedling.png" id="2_t4dqi"]
-[ext_resource type="Texture2D" path="res://Assets/CharacterSprites/Creatures/Sproutling.png" id="3_keh82"]
+[ext_resource type="Texture2D" uid="uid://bdu1qaocjvmxc" path="res://Assets/CharacterSprites/Creatures/Creature_0.png" id="1_7el3q"]
+[ext_resource type="Texture2D" uid="uid://bbenlip6vg6m1" path="res://Assets/CharacterSprites/Creatures/Seedling.png" id="2_t4dqi"]
+[ext_resource type="Texture2D" uid="uid://ifa4w4k1vtq2" path="res://Assets/CharacterSprites/Creatures/Sproutling.png" id="3_keh82"]
 [ext_resource type="Script" path="res://Scripts/Creatures/Creature.gd" id="4_iekwx"]
 
 [resource]
 script = ExtResource("4_iekwx")
-Name = "Araminta"
+Name = "Thalion"
 SeedSprite = ExtResource("2_t4dqi")
 SproutSrite = ExtResource("3_keh82")
 GrownSprite = ExtResource("1_7el3q")
 GrowthStage = 0
 GrowthSpeed = 1
-Blood = 9.54177
-Phlegm = 8.02853
-YellowBile = 10.0954
-BlackBile = 10.9438
-CreatureValue = 9
+Blood = 100.0
+Phlegm = 100.0
+YellowBile = 100.0
+BlackBile = 100.0
+CreatureValue = 2808

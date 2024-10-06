@@ -1,0 +1,167 @@
+[gd_scene load_steps=16 format=3 uid="uid://dowxsvarm5kl1"]
+
+[ext_resource type="Texture2D" uid="uid://bblhi3jjheyec" path="res://Assets/UI/GoldPaperRect.png" id="1_iagnw"]
+[ext_resource type="Script" path="res://Scripts/UI/KingShopUI.gd" id="1_ullmf"]
+[ext_resource type="FontVariation" uid="uid://b1xenlah75lik" path="res://Assets/UI/Theme/GothicFont.tres" id="2_2gmsw"]
+[ext_resource type="Script" path="res://Scripts/HoverUI.gd" id="3_50xw3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agfho"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dyyhx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qbtnu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rg8i4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60wvt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m22co"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fr68l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5i37x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dcthd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x4n2x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y7ho0"]
+
+[node name="KingShopUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ullmf")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_iagnw")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Filler" type="Label" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.443137, 0.172549, 0.211765, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2gmsw")
+text = "Royal Decree to Assume Ownership of an Heir:
+
+If the Heir is of a suitable standard, I, the King Invoke my Divine Right to claim ownership of it."
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="Accept" type="Label" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.443137, 0.172549, 0.211765, 1)
+theme_override_colors/font_shadow_color = Color(0.0313726, 0, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("2_2gmsw")
+text = "I Accept"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_50xw3")
+
+[node name="Accept" type="Button" parent="NinePatchRect/VBoxContainer/HBoxContainer/Accept"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("2_2gmsw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_agfho")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_dyyhx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qbtnu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_rg8i4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_60wvt")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_m22co")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fr68l")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5i37x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dcthd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_x4n2x")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y7ho0")
+flat = true
+icon_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+
+[node name="Decline" type="Label" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.443137, 0.172549, 0.211765, 1)
+theme_override_colors/font_shadow_color = Color(0.0313726, 0, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("2_2gmsw")
+text = "I Decline"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_50xw3")
+
+[node name="Decline" type="Button" parent="NinePatchRect/VBoxContainer/HBoxContainer/Decline"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("2_2gmsw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_agfho")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_dyyhx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qbtnu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_rg8i4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_60wvt")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_m22co")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fr68l")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5i37x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dcthd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_x4n2x")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y7ho0")
+flat = true
+icon_alignment = 1
+
+[connection signal="mouse_entered" from="NinePatchRect/VBoxContainer/HBoxContainer/Accept" to="NinePatchRect/VBoxContainer/HBoxContainer/Accept" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/VBoxContainer/HBoxContainer/Accept" to="NinePatchRect/VBoxContainer/HBoxContainer/Accept" method="_on_mouse_exited"]
+[connection signal="resized" from="NinePatchRect/VBoxContainer/HBoxContainer/Accept" to="NinePatchRect/VBoxContainer/HBoxContainer/Accept" method="_on_resized"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/HBoxContainer/Accept/Accept" to="." method="_on_accept_pressed"]
+[connection signal="mouse_entered" from="NinePatchRect/VBoxContainer/HBoxContainer/Decline" to="NinePatchRect/VBoxContainer/HBoxContainer/Decline" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/VBoxContainer/HBoxContainer/Decline" to="NinePatchRect/VBoxContainer/HBoxContainer/Decline" method="_on_mouse_exited"]
+[connection signal="resized" from="NinePatchRect/VBoxContainer/HBoxContainer/Decline" to="NinePatchRect/VBoxContainer/HBoxContainer/Decline" method="_on_resized"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/HBoxContainer/Decline/Decline" to="." method="_on_decline_pressed"]

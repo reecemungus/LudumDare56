@@ -32,6 +32,9 @@ func _init() -> void:
 	CalculateValue()
 	
 	SignalBus.OnSleep.connect(OnSleep)
+	SignalBus.CreatureUpdateHumors.connect(UpdateHumors)
+	
+	SignalBus.CreatureUpdateHumors.emit()
 
 func AssignInitialStats() -> void:
 	var mult := Player.multiplier
@@ -45,6 +48,13 @@ func AssignInitialStats() -> void:
 
 func OnSleep() -> void:
 	if GrowthStage == Game.GrowthStage.GROWN: # If is fully grown, exit
+		Blood += randi_range(0, Game.dailyGrowth)
+		Phlegm += randi_range(0, Game.dailyGrowth)
+		YellowBile += randi_range(0, Game.dailyGrowth)
+		BlackBile += randi_range(0, Game.dailyGrowth)
+		
+		SignalBus.CreatureUpdateHumors.emit()
+		
 		return
 	
 	growthPoints -= GrowthSpeed
@@ -68,3 +78,16 @@ func CalculateValue() -> int:
 	CreatureValue = floorf(tempVal)
 	
 	return CreatureValue
+
+func UpdateHumors() -> void:
+	if Blood > 100:
+		Blood = 100
+	
+	if Phlegm > 100:
+		Phlegm = 100
+	
+	if YellowBile > 100:
+		YellowBile = 100
+	
+	if BlackBile > 100:
+		BlackBile = 100

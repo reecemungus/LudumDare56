@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=3 format=3 uid="uid://bxjkyfk287dnw"]
+
+[ext_resource type="Texture2D" uid="uid://cq0gn32hwewk3" path="res://Assets/Potions/YellowBile.png" id="1_e6g2e"]
+[ext_resource type="Script" path="res://Scripts/Potions/Potion.gd" id="2_hcbgj"]
+
+[resource]
+script = ExtResource("2_hcbgj")
+Sprite = ExtResource("1_e6g2e")
+potionType = 3
+potionName = "Yellow Bile"
+potionStrength = 26.411
+potionCost = 5

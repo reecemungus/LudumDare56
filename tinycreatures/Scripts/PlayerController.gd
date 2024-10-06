@@ -29,6 +29,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
+	if !canMove: return
+	
 	if event.is_action_pressed("Interact"):
 		var area : Area2D = FindInput()
 		if area: SignalBus.OnPlayerInteract.emit(area)

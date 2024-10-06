@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvdtrpuudi1ob"]
+
+[ext_resource type="Script" path="res://Scripts/UI/AlchemistShopUI.gd" id="1_tx6no"]
+[ext_resource type="Texture2D" uid="uid://cmlrta1lfnanq" path="res://Assets/UI/PaperRect.png" id="2_mrmoq"]
+[ext_resource type="FontVariation" uid="uid://b1xenlah75lik" path="res://Assets/UI/Theme/GothicFont.tres" id="3_0dn7i"]
+[ext_resource type="Texture2D" uid="uid://btd4d8sca8vu1" path="res://Assets/UI/Cross.png" id="4_ryfmj"]
+[ext_resource type="Texture2D" uid="uid://bmrhoee8lqq58" path="res://Assets/UI/CrossHovered.png" id="5_r0yhx"]
+[ext_resource type="Script" path="res://Scripts/HoverUI.gd" id="6_23mpf"]
+
+[node name="AlchemistShopUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_tx6no")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mrmoq")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.025
+anchor_right = 0.9
+anchor_bottom = 0.275
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.443137, 0.172549, 0.211765, 1)
+theme_override_colors/font_shadow_color = Color(0.0313726, 0, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("3_0dn7i")
+theme_override_font_sizes/font_size = 32
+text = "For Sale Today:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0494792
+anchor_top = 0.276786
+anchor_right = 0.950521
+anchor_bottom = 0.794643
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+columns = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="PotionInfo" type="Label" parent="NinePatchRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0690104
+anchor_top = 0.794643
+anchor_right = 0.928385
+anchor_bottom = 0.986607
+offset_left = 11.5
+offset_right = -11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.443137, 0.172549, 0.211765, 1)
+theme_override_colors/font_shadow_color = Color(0.0313726, 0, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("3_0dn7i")
+theme_override_font_sizes/font_size = 16
+text = "Yellow Bile Potion, cost of 25 Gold Pieces"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CloseButton" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -26.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 26.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_ryfmj")
+texture_hover = ExtResource("5_r0yhx")
+stretch_mode = 0
+script = ExtResource("6_23mpf")
+
+[connection signal="mouse_entered" from="NinePatchRect/CloseButton" to="NinePatchRect/CloseButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/CloseButton" to="NinePatchRect/CloseButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="NinePatchRect/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="resized" from="NinePatchRect/CloseButton" to="NinePatchRect/CloseButton" method="_on_resized"]
