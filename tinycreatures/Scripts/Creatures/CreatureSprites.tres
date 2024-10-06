@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="CreatureSpriteArray" load_steps=3 format=3 uid="uid://cuicq5pj7ttts"]
-
-[ext_resource type="Texture2D" uid="uid://bdu1qaocjvmxc" path="res://Assets/CharacterSprites/Creatures/Creature_0.png" id="1_8kis2"]
-[ext_resource type="Script" path="res://Scripts/Creatures/CreatureSprites.gd" id="1_u8ftg"]
-
-[resource]
-script = ExtResource("1_u8ftg")
-Sprites = Array[Texture2D]([ExtResource("1_8kis2")])

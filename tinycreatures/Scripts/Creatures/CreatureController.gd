@@ -5,11 +5,21 @@ class_name CreatureController
 ## Class to control a creature scene in game, owns a creature as a child
 
 var creatureRes : Creature = Creature.new()
+var CREATUREVIEWUI 
 
 @onready var player : PlayerController = get_tree().get_first_node_in_group("G_PlayerController")
 var isBoundToPlayer : bool = false
 
 var targetLocation : Vector2
+
+var speakSounds : Array[String] = [
+	"res://Assets/Audio/Peep.wav", 
+	"res://Assets/Audio/Bleat.wav", 
+	"res://Assets/Audio/Burp.wav", 
+	"res://Assets/Audio/Call.wav", 
+	"res://Assets/Audio/Meow.wav", 
+	"res://Assets/Audio/Squeak.wav", 
+	"res://Assets/Audio/Whistle.wav"]
 
 func _ready() -> void:
 	ResourceSaver.save(creatureRes, "res://Scenes/Creatures/testCreature.tres")
@@ -17,6 +27,8 @@ func _ready() -> void:
 	SignalBus.CreatureUpdateSprite.connect(UpdateSprite)
 	SignalBus.OnPlayerReleaseCreature.connect(OnDragEnd)
 	SignalBus.KillBoundCreature.connect(KillBoundCreature)
+	
+	%SpeakTimer.wait_time = 7.0 + randf_range(-2, 6)
 
 func _physics_process(delta: float) -> void:
 	var distanceToPlayer : Vector2 = player.global_position - global_position
@@ -38,12 +50,13 @@ func UpdateSprite() -> void:
 		Game.GrowthStage.GROWN:
 			%CreatureSprite.texture = creatureRes.GrownSprite
 
-func OnInteract() -> void:	
-	var CREATUREVIEWUI = preload("res://Scenes/UI/CreatureViewUI.tscn").instantiate()
-	var PlayerHud : CanvasLayer = get_tree().get_first_node_in_group("G_PlayerHUD")
-	
-	CREATUREVIEWUI.creature = creatureRes
-	PlayerHud.add_child(CREATUREVIEWUI)
+func OnInteract() -> void:
+	if !CREATUREVIEWUI:
+		CREATUREVIEWUI = preload("res://Scenes/UI/CreatureViewUI.tscn").instantiate()
+		var PlayerHud : CanvasLayer = get_tree().get_first_node_in_group("G_PlayerHUD")
+		
+		CREATUREVIEWUI.creature = creatureRes
+		PlayerHud.add_child(CREATUREVIEWUI)
 
 func OnDrag() -> void:
 	AudioManager.playSoundAtLocation(global_position, "res://Assets/Audio/Pickup.wav")
@@ -68,3 +81,7 @@ func KillBoundCreature() -> void:
 
 func ConstrainDistance(point : Vector2, anchor : Vector2, distance : float) -> Vector2:
 	return ((point - anchor).normalized() * distance) + anchor
+
+func _on_speak_timer_timeout() -> void:
+	if creatureRes.GrowthStage == Game.GrowthStage.SPROUT or creatureRes.GrowthStage == Game.GrowthStage.GROWN:
+		AudioManager.playSoundAtLocation(global_position, speakSounds[randi_range(0,speakSounds.size() - 1)])

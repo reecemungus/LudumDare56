@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CreatureAesthetics" load_steps=12 format=3 uid="uid://cuicq5pj7ttts"]
+
+[ext_resource type="Texture2D" uid="uid://bdu1qaocjvmxc" path="res://Assets/CharacterSprites/Creatures/Creature_0.png" id="1_snamm"]
+[ext_resource type="Texture2D" uid="uid://cfni7twjx2hru" path="res://Assets/CharacterSprites/Creatures/Creature_1.png" id="2_v6rfc"]
+[ext_resource type="Texture2D" uid="uid://cp8ul3c5bsn64" path="res://Assets/CharacterSprites/Creatures/Creature_2.png" id="3_mbss3"]
+[ext_resource type="Texture2D" uid="uid://ldq80c6d78tv" path="res://Assets/CharacterSprites/Creatures/Creature_3.png" id="4_ysex1"]
+[ext_resource type="Texture2D" uid="uid://ok3ifofs0l4y" path="res://Assets/CharacterSprites/Creatures/Creature_4.png" id="5_nmotp"]
+[ext_resource type="Texture2D" uid="uid://bfv1b6msrlqlu" path="res://Assets/CharacterSprites/Creatures/Creature_5.png" id="6_y8j58"]
+[ext_resource type="Texture2D" uid="uid://dqhyy10cicqah" path="res://Assets/CharacterSprites/Creatures/Creature_6.png" id="7_ahlew"]
+[ext_resource type="Texture2D" uid="uid://brvgiivicssab" path="res://Assets/CharacterSprites/Creatures/Creature_7.png" id="8_nf86x"]
+[ext_resource type="Texture2D" uid="uid://ch843q0r7a8fg" path="res://Assets/CharacterSprites/Creatures/Creature_8.png" id="9_rangj"]
+[ext_resource type="Texture2D" uid="uid://c2du82ino4xux" path="res://Assets/CharacterSprites/Creatures/Creature_9.png" id="10_xya4v"]
+[ext_resource type="Script" path="res://Scripts/Creatures/CreatureSprites.gd" id="11_8vqj5"]
+
+[resource]
+script = ExtResource("11_8vqj5")
+Sprites = Array[Texture2D]([ExtResource("1_snamm"), ExtResource("2_v6rfc"), ExtResource("3_mbss3"), ExtResource("4_ysex1"), ExtResource("5_nmotp"), ExtResource("6_y8j58"), ExtResource("7_ahlew"), ExtResource("8_nf86x"), ExtResource("9_rangj"), ExtResource("10_xya4v")])

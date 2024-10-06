@@ -23,7 +23,7 @@ var growthPoints : int = 5 # When this hits 0, the GrowthStage will Increment
 @export var CreatureValue : int
 
 func _init() -> void:
-	var creatureAes : CreatureAesthetics = load("res://Scripts/Creatures/CreatureSprites.tres")
+	var creatureAes : CreatureAesthetics = load("res://Assets/CharacterSprites/Creatures/CreatureSprites.tres")
 	GrownSprite = creatureAes.GetRandomSprite()
 	
 	Name = creatureAes.GetRandomName()

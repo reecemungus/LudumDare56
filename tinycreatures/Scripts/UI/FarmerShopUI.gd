@@ -11,9 +11,11 @@ func _ready() -> void:
 
 func _on_accept_pressed() -> void:
 	Player.addMoney(player.boundCreature.CalculateValue())
-	
 	SignalBus.KillBoundCreature.emit()
 	
+	AudioManager.playSound("res://Assets/Audio/Death.wav")
+	
+	SignalBus.OnPlayerReleaseCreature.emit()
 	queue_free()
 
 func _on_decline_pressed() -> void:

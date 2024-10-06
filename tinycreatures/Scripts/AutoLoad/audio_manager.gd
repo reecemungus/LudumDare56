@@ -12,6 +12,7 @@ func playSoundAtLocation(globalLocation : Vector2, sound : String, pitchVariatio
 	newSound.global_position = globalLocation
 	
 	newSound.pitch_scale = randf_range((1 - pitchVariation), (1 + pitchVariation))
+	newSound.attenuation = 75.0
 	
 	newSound.playing = true
 	newSound.finished.connect(newSound.queue_free)

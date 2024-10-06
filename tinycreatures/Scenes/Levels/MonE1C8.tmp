@@ -15,7 +15,6 @@ y_sort_enabled = true
 script = ExtResource("1_4lklq")
 
 [node name="MonkPlayer" parent="." instance=ExtResource("2_ed1so")]
-position = Vector2(190, 8)
 
 [node name="MonasteryTileMap" parent="." instance=ExtResource("1_3hvqa")]
 

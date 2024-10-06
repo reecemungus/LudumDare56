@@ -1,9 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bg5kqew78fxqj"]
+[gd_scene load_steps=16 format=3 uid="uid://dp7ttqypxbxuy"]
 
-[ext_resource type="Script" path="res://Scripts/UI/ShopUnavailable.gd" id="1_ffuex"]
-[ext_resource type="Texture2D" uid="uid://cmlrta1lfnanq" path="res://Assets/UI/PaperRect.png" id="1_wd5hx"]
-[ext_resource type="FontVariation" uid="uid://b1xenlah75lik" path="res://Assets/UI/Theme/GothicFont.tres" id="2_nlwfw"]
-[ext_resource type="Script" path="res://Scripts/HoverUI.gd" id="3_ckt60"]
+[ext_resource type="Script" path="res://Scripts/UI/ShopUnavailable.gd" id="1_gf5y6"]
+[ext_resource type="Texture2D" uid="uid://cmlrta1lfnanq" path="res://Assets/UI/PaperRect.png" id="2_1dk15"]
+[ext_resource type="FontVariation" uid="uid://b1xenlah75lik" path="res://Assets/UI/Theme/GothicFont.tres" id="3_kkiqt"]
+[ext_resource type="Script" path="res://Scripts/HoverUI.gd" id="4_568vp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_do54a"]
 
@@ -27,14 +27,14 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7cl0"]
 
-[node name="FarmerUnavailable" type="Control"]
+[node name="AlchemistUnavailable" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ffuex")
+script = ExtResource("1_gf5y6")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -45,7 +45,7 @@ anchor_right = 0.8
 anchor_bottom = 0.975
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_wd5hx")
+texture = ExtResource("2_1dk15")
 region_rect = Rect2(0, 0, 64, 64)
 patch_margin_left = 5
 patch_margin_top = 5
@@ -72,10 +72,12 @@ custom_minimum_size = Vector2(5, 5)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.443137, 0.172549, 0.211765, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_nlwfw")
-text = "Request for Butchery:
+theme_override_fonts/font = ExtResource("3_kkiqt")
+text = "Father:
 
-Bring me one of your creations, fully grown. I will pay most handsomely for it's holy flesh."
+Bring me a fully grown creature. I will help make it perfect.
+
+I will not sell you a Holy Elixir without a creature present, do not ask why."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -90,11 +92,11 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_colors/font_color = Color(0.443137, 0.172549, 0.211765, 1)
 theme_override_colors/font_shadow_color = Color(0.0313726, 0, 0.0862745, 1)
-theme_override_fonts/font = ExtResource("2_nlwfw")
+theme_override_fonts/font = ExtResource("3_kkiqt")
 text = "I Accept"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("3_ckt60")
+script = ExtResource("4_568vp")
 
 [node name="Accept" type="Button" parent="NinePatchRect/VBoxContainer/Accept"]
 layout_mode = 1
@@ -104,7 +106,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_fonts/font = ExtResource("2_nlwfw")
+theme_override_fonts/font = ExtResource("3_kkiqt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_do54a")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_jmrkd")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_hys63")

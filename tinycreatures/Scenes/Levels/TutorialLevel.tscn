@@ -1,17 +1,119 @@
-[gd_scene load_steps=5 format=3 uid="uid://chhm4hfh6didg"]
+[gd_scene load_steps=8 format=3 uid="uid://chhm4hfh6didg"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/TutorialLevelScript.gd" id="1_3ft7j"]
 [ext_resource type="Texture2D" uid="uid://dwsaenhq8ft1l" path="res://Assets/CharacterSprites/King.png" id="1_606ol"]
 [ext_resource type="Texture2D" uid="uid://bbotepje3fa2g" path="res://Assets/UI/ButtonRect.png" id="2_ayfe4"]
 [ext_resource type="FontVariation" uid="uid://b1xenlah75lik" path="res://Assets/UI/Theme/GothicFont.tres" id="3_q5nvp"]
 
+[sub_resource type="Animation" id="Animation_v7oss"]
+resource_name = "HideToolTip"
+length = 5.0
+step = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Text/SkipTip:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4, 5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Text/SkipTip:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4, 5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Text/SkipTip:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4, 5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Text/SkipTip:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4, 5)
+}
+
+[sub_resource type="Animation" id="Animation_lyjvc"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Text/SkipTip:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Text/SkipTip:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Text/SkipTip:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Text/SkipTip:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y0yi2"]
+_data = {
+"HideToolTip": SubResource("Animation_v7oss"),
+"RESET": SubResource("Animation_lyjvc")
+}
+
 [node name="TutorialLevel" type="Node2D"]
 script = ExtResource("1_3ft7j")
-text = Array[String](["Greetings, Father. Tis I, your King.", "I have a task for you, something that can only be done by someone Holy as thou.", "I have been forsaken by my people, in being denied a worthy Heir.", "It is my wish that you, father, create an heir for me.", "You will create life from the ground, using a Saplings granted to you by myself.", "I will grant you the use of my grounds, there, you will find all you need to complete my task.", "The South-Western building will serve as your Quarters. Sleep there to pass the time. ", "The North-Western Building houses our farmer, he will make good use of any plant scraps you want rid of.", "In the North-East, you will find the Alchemist. They will help augment your spawn, as well as yourself.", "The more Holy you become through the use of Holy Elixir, the better you will become at tending these creatures.", "Finally, you may find me and one of my Knights in the South-Eastern Building.", "Speak to my knight if you require more Sprouts, and speak to me when you have created the perfect Heir.", "Good luck, Father."])
+text = Array[String](["Greetings, Father. Tis I, your King.", "I have a task for you, something that can only be done by someone Holy as thou.", "I have been forsaken by my people, in being denied a worthy Heir.", "It is my wish that you, father, create an heir for me.", "You will create life from the ground, using a Saplings granted to you by myself.", "I will grant you the use of my grounds, there, you will find all you need to complete my task.", "The South-Western building will serve as your Quarters. Sleep there to pass the time. ", "The North-Western Building houses our farmer, he will make good use of any plant scraps you want rid of.", "In the North-East, you will find the Alchemist. They will help augment your spawn, as well as yourself.", "The more Holy you become through the use of Holy Elixir, the better you will become at tending these creatures.", "Finally, you may find me and one of my Knights in the South-Eastern Building.", "Speak to my knight if you require more Sprouts, and speak to me when you have created the perfect Heir.", "Before I leave you, we must discuss etiquette on my grounds.", "To move, use WASD, the Arrow Keys or the Numpad", "To speak or interact with people and creatures, or quite rudely, skip my text - use the E or Space Key.", "To drag your creatures, to the Farmer or Alchemist, use the Q or Enter Key.", "When interacting with buttons on the screen, simply click on them with the Left Mouse Button.", "That should be all. Good luck, Father."])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Text" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,7 +121,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+[node name="BackGround" type="ColorRect" parent="CanvasLayer/Text"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +130,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0313726, 0, 0.0862745, 1)
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="KingSprite" type="TextureRect" parent="CanvasLayer/Text"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4
@@ -42,7 +144,7 @@ expand_mode = 4
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Control"]
+[node name="TextBox" type="NinePatchRect" parent="CanvasLayer/Text"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,7 +162,7 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/NinePatchRect"]
+[node name="Label" type="Label" parent="CanvasLayer/Text/TextBox"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -79,8 +181,33 @@ autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
+[node name="SkipTip" type="Label" parent="CanvasLayer/Text"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.266667
+anchor_top = 0.510714
+anchor_right = 0.733333
+anchor_bottom = 0.610714
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.952941, 0.980392, 0.909804, 1)
+theme_override_colors/font_shadow_color = Color(0.0313726, 0, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("3_q5nvp")
+theme_override_font_sizes/font_size = 20
+text = "Press E to skip text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y0yi2")
+}
+autoplay = "HideToolTip"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

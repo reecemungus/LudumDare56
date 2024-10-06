@@ -27,4 +27,4 @@ func FadeOut() -> void:
 	%AnimationPlayer.current_animation = "FadeOut"
 
 func EndGame() -> void:
-	pass
+	get_tree().change_scene_to_file("res://Scenes/Levels/EndingLevel.tscn")

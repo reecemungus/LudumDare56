@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="NPC" load_steps=4 format=3 uid="uid://dlxb68fdmkkoq"]
+[gd_resource type="Resource" script_class="NPC" load_steps=5 format=3 uid="uid://dlxb68fdmkkoq"]
 
 [ext_resource type="PackedScene" uid="uid://dowxsvarm5kl1" path="res://Scenes/UI/KingShopUI.tscn" id="1_8tx5c"]
 [ext_resource type="Texture2D" uid="uid://dwsaenhq8ft1l" path="res://Assets/CharacterSprites/King.png" id="1_ayy21"]
 [ext_resource type="Script" path="res://Scripts/NPCs/NPC.gd" id="1_qr6kt"]
+[ext_resource type="PackedScene" uid="uid://b2kydot5oa74r" path="res://Scenes/UI/KingUnavailable.tscn" id="3_ftx8i"]
 
 [resource]
 script = ExtResource("1_qr6kt")
 Sprite = ExtResource("1_ayy21")
 NPCType = 3
 ShopkeeperScene = ExtResource("1_8tx5c")
+UnavailableScene = ExtResource("3_ftx8i")

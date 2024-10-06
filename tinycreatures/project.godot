@@ -13,7 +13,8 @@ config_version=5
 config/name="TinyCreatures"
 run/main_scene="res://Scenes/Levels/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.054902, 0.0588235, 0.270588, 1)
+config/icon="res://Assets/Logo.png"
 
 [autoload]
 

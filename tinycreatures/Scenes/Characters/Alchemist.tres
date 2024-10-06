@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="NPC" load_steps=4 format=3 uid="uid://bous82rkxr62o"]
+[gd_resource type="Resource" script_class="NPC" load_steps=5 format=3 uid="uid://bous82rkxr62o"]
 
 [ext_resource type="Script" path="res://Scripts/NPCs/NPC.gd" id="1_3hm0l"]
 [ext_resource type="Texture2D" uid="uid://deglmasco8ne2" path="res://Assets/CharacterSprites/Alchemist.png" id="1_ptmg1"]
 [ext_resource type="PackedScene" uid="uid://dvdtrpuudi1ob" path="res://Scenes/UI/AlchemistShopUI.tscn" id="1_pyfuw"]
+[ext_resource type="PackedScene" uid="uid://dp7ttqypxbxuy" path="res://Scenes/UI/AlchemistUnavailable.tscn" id="3_irk81"]
 
 [resource]
 script = ExtResource("1_3hm0l")
 Sprite = ExtResource("1_ptmg1")
 NPCType = 1
 ShopkeeperScene = ExtResource("1_pyfuw")
+UnavailableScene = ExtResource("3_irk81")
