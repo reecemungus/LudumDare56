@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://conr6rnas6on8"]
+[gd_scene load_steps=15 format=3 uid="uid://conr6rnas6on8"]
 
 [ext_resource type="Texture2D" uid="uid://bi26wh2loda" path="res://Assets/UI/BloodBox.png" id="1_8phye"]
 [ext_resource type="Script" path="res://Scripts/UI/CreatureViewUI.gd" id="1_lod60"]
 [ext_resource type="Texture2D" uid="uid://bt6toh1j2rhj" path="res://Assets/UI/HumorBox.png" id="1_qlm5s"]
 [ext_resource type="Texture2D" uid="uid://cgp84f3jg8aem" path="res://Assets/UI/ButtonRectColorLess.png" id="1_sfi7j"]
 [ext_resource type="Theme" uid="uid://btsucjh5vgxgy" path="res://Assets/UI/Theme/UITheme.tres" id="2_fh5uy"]
-[ext_resource type="Resource" uid="uid://c2hktj5bcvm5e" path="res://Scenes/Creatures/testCreature.tres" id="2_u85t1"]
 [ext_resource type="Texture2D" uid="uid://btd4d8sca8vu1" path="res://Assets/UI/Cross.png" id="3_6kgro"]
 [ext_resource type="Texture2D" uid="uid://c3hqi178iayvg" path="res://Assets/UI/YellowBileBox.png" id="3_7fdpg"]
 [ext_resource type="Texture2D" uid="uid://d07t3trmta61a" path="res://Assets/UI/BlackBileBox.png" id="4_3ko6m"]
@@ -28,7 +27,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_lod60")
-creature = ExtResource("2_u85t1")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 modulate = Color(0.764706, 0.705882, 0.686275, 1)

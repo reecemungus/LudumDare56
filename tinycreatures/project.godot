@@ -10,11 +10,13 @@ config_version=5
 
 [application]
 
-config/name="TinyCreatures"
+config/name="GravelHeir"
+config/version="1.0"
 run/main_scene="res://Scenes/Levels/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.054902, 0.0588235, 0.270588, 1)
 config/icon="res://Assets/Logo.png"
+config/windows_native_icon="res://Assets/Logo.ico"
 
 [autoload]
 
@@ -23,11 +25,6 @@ SignalBus="*res://Scripts/AutoLoad/signal_bus.gd"
 Player="*res://Scripts/AutoLoad/player.gd"
 Game="*res://Scripts/AutoLoad/game.gd"
 AlchemistInventory="*res://Scripts/AutoLoad/alchemist_inventory.gd"
-
-[debug]
-
-gdscript/warnings/unused_signal=0
-gdscript/warnings/narrowing_conversion=0
 
 [display]
 

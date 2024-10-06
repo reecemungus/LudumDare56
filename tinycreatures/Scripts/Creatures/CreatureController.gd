@@ -21,9 +21,7 @@ var speakSounds : Array[String] = [
 	"res://Assets/Audio/Squeak.wav", 
 	"res://Assets/Audio/Whistle.wav"]
 
-func _ready() -> void:
-	ResourceSaver.save(creatureRes, "res://Scenes/Creatures/testCreature.tres")
-	
+func _ready() -> void:	
 	SignalBus.CreatureUpdateSprite.connect(UpdateSprite)
 	SignalBus.OnPlayerReleaseCreature.connect(OnDragEnd)
 	SignalBus.KillBoundCreature.connect(KillBoundCreature)

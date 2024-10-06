@@ -9,10 +9,12 @@ func _ready() -> void:
 	maxSteps = text.size()
 	
 	%Label.text = text[textSteps]
+	
+	ResourceLoader.load_threaded_request("res://Scenes/Levels/Monastery.tscn")
 
 func _input(event: InputEvent) -> void:
 	if textSteps == maxSteps:
-		get_tree().change_scene_to_file("res://Scenes/Levels/Monastery.tscn")
+		get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get("res://Scenes/Levels/Monastery.tscn"))
 		return
 	
 	if event.is_action_pressed("Interact"):

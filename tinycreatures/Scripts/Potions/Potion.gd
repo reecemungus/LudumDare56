@@ -35,8 +35,6 @@ func _init() -> void:
 			potionName = "Chum"
 	
 	Sprite = Game.potionSprites[pt]
-	
-	ResourceSaver.save(self, "res://Scenes/testPot.tres")
 
 func UsePotion(creature : Creature) -> void:
 	match potionType:
