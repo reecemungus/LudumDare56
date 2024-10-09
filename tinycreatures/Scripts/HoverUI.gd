@@ -9,6 +9,8 @@ class_name HoverUI
 
 var targetSize : Vector2 = Vector2.ONE
 
+var hoverSound : AudioStream = preload("res://Assets/Audio/Hover.wav")
+
 func _ready() -> void:
 	pivot_offset = Vector2(size.x / 2, size.y / 2)
 
@@ -17,7 +19,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_mouse_entered() -> void:
 	targetSize = Vector2(hoverSize, hoverSize)
-	AudioManager.playSound("res://Assets/Audio/Hover.wav")
+	AudioManager.playSound(hoverSound)
 
 func _on_mouse_exited() -> void:
 	targetSize = Vector2.ONE

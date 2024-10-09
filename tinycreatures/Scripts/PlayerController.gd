@@ -10,6 +10,8 @@ const SLOWVAL = 500.0
 var canMove : bool = true
 var boundCreature : Creature
 
+var footstepSound : AudioStream = preload("res://Assets/Audio/FootStep.wav")
+
 func _ready() -> void:
 	SignalBus.FreezePlayer.connect(FreezePlayer)
 	SignalBus.BindCreatureToPlayer.connect(BindCreature)
@@ -54,7 +56,7 @@ func FindInput() -> Area2D: # Finds closes area 2D
 	else: return null
 
 func PlayFootstepSound() -> void:
-	AudioManager.playSoundAtLocation(global_position, "res://Assets/Audio/FootStep.wav")
+	AudioManager.playSoundAtLocation(global_position, footstepSound)
 
 func FreezePlayer(input : bool = false) -> void:
 	canMove = input

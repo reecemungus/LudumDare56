@@ -3,6 +3,8 @@ extends Control
 @onready var player : PlayerController = get_tree().get_first_node_in_group("G_PlayerController")
 var creature : Creature
 
+var deathSound : AudioStream = preload("res://Assets/Audio/Death.wav")
+
 func _ready() -> void:
 	creature = player.boundCreature
 	
@@ -13,7 +15,7 @@ func _on_accept_pressed() -> void:
 	Player.addMoney(player.boundCreature.CalculateValue())
 	SignalBus.KillBoundCreature.emit()
 	
-	AudioManager.playSound("res://Assets/Audio/Death.wav")
+	AudioManager.playSound(deathSound)
 	
 	SignalBus.OnPlayerReleaseCreature.emit()
 	queue_free()

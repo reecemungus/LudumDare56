@@ -2,8 +2,10 @@ extends Control
 
 @export var creature : Creature
 
+var selectSound : AudioStream = preload("res://Assets/Audio/Select.wav")
+
 func _on_close_button_pressed() -> void:
-	AudioManager.playSound("res://Assets/Audio/Select.wav")
+	AudioManager.playSound(selectSound)
 	queue_free()
 
 func _ready() -> void:

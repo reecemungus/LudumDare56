@@ -3,6 +3,9 @@ class_name PotionUISlot
 
 var potion : Potion
 
+var selectSound : AudioStream = preload("res://Assets/Audio/Select.wav")
+var denySound : AudioStream = preload("res://Assets/Audio/Deny.wav")
+
 func _ready() -> void:
 	%TextureRect.texture = potion.Sprite
 	
@@ -20,11 +23,11 @@ func _on_button_pressed() -> void:
 	var creature : Creature = player.boundCreature
 	
 	if creature && Player.takeMoney(potion.potionCost):
-		AudioManager.playSound("res://Assets/Audio/Select.wav")
+		AudioManager.playSound(selectSound)
 		
 		potion.UsePotion(creature)
 		
 		AlchemistInventory.Inventory.remove_at(AlchemistInventory.Inventory.find(potion)) 
 		queue_free()
 	
-	else: AudioManager.playSound("res://Assets/Audio/Deny.wav")
+	else: AudioManager.playSound(denySound)

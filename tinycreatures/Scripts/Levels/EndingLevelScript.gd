@@ -4,6 +4,8 @@ extends Node2D
 var textSteps : int = 0
 var maxSteps : int
 
+var speakSound : AudioStream = preload("res://Assets/Audio/Speak.wav")
+
 func _ready() -> void:
 	SignalBus.FadeIn.emit()
 	maxSteps = text.size()
@@ -34,4 +36,4 @@ func AdvanceText() -> void:
 func _on_timer_timeout() -> void:
 	if %Label.visible_ratio < 1.0:
 		%Label.visible_characters += 1
-		AudioManager.playSound("res://Assets/Audio/Speak.wav", 0.5)
+		AudioManager.playSound(speakSound, 0.5)

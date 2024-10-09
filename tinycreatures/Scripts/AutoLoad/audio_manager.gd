@@ -3,10 +3,9 @@ extends Node
 ### INFO
 ## Global class handling the creation and destruction of audio assets at runtime
 
-func playSoundAtLocation(globalLocation : Vector2, sound : String, pitchVariation : float = 0.2) -> void:
+func playSoundAtLocation(globalLocation : Vector2, sound : AudioStream, pitchVariation : float = 0.2) -> void:
 	var newSound : AudioStreamPlayer2D = AudioStreamPlayer2D.new()
-	newSound.bus = "SFX"
-	newSound.stream = load(sound)
+	newSound.stream = sound
 	
 	add_child(newSound)
 	newSound.global_position = globalLocation
@@ -17,10 +16,9 @@ func playSoundAtLocation(globalLocation : Vector2, sound : String, pitchVariatio
 	newSound.playing = true
 	newSound.finished.connect(newSound.queue_free)
 
-func playSound(sound : String, pitchVariation : float = 0.2) -> void:
+func playSound(sound : AudioStream, pitchVariation : float = 0.2) -> void:
 	var newSound : AudioStreamPlayer = AudioStreamPlayer.new()
-	newSound.bus = "SFX"
-	newSound.stream = load(sound)
+	newSound.stream = sound
 	
 	add_child(newSound)
 	

@@ -1,6 +1,8 @@
 extends CanvasModulate
 class_name ScreenFade
 
+var sleepSound : AudioStream = preload("res://Assets/Audio/Sleep.wav")
+
 func _ready() -> void:
 	SignalBus.FadeIn.connect(FadeIn)
 	SignalBus.FadeOut.connect(FadeOut)
@@ -11,7 +13,7 @@ func _ready() -> void:
 
 func OnPlayerSlept() -> void:
 	%AnimationPlayer.current_animation = "SleepFade"
-	AudioManager.playSound("res://Assets/Audio/Sleep.wav")
+	AudioManager.playSound(sleepSound)
 
 func SleepFadeEnd() -> void:
 	SignalBus.OnSleep.emit()

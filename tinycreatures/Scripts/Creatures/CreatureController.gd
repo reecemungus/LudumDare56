@@ -12,14 +12,17 @@ var isBoundToPlayer : bool = false
 
 var targetLocation : Vector2
 
-var speakSounds : Array[String] = [
-	"res://Assets/Audio/Peep.wav", 
-	"res://Assets/Audio/Bleat.wav", 
-	"res://Assets/Audio/Burp.wav", 
-	"res://Assets/Audio/Call.wav", 
-	"res://Assets/Audio/Meow.wav", 
-	"res://Assets/Audio/Squeak.wav", 
-	"res://Assets/Audio/Whistle.wav"]
+var speakSounds : Array[AudioStream] = [
+	preload("res://Assets/Audio/Peep.wav"), 
+	preload("res://Assets/Audio/Bleat.wav"), 
+	preload("res://Assets/Audio/Burp.wav"), 
+	preload("res://Assets/Audio/Call.wav"), 
+	preload("res://Assets/Audio/Meow.wav"), 
+	preload("res://Assets/Audio/Squeak.wav"), 
+	preload("res://Assets/Audio/Whistle.wav")]
+
+var pickupSound : AudioStream = preload("res://Assets/Audio/Pickup.wav")
+var dropSound : AudioStream = preload("res://Assets/Audio/Drop.wav")
 
 func _ready() -> void:	
 	SignalBus.CreatureUpdateSprite.connect(UpdateSprite)
@@ -57,7 +60,7 @@ func OnInteract() -> void:
 		PlayerHud.add_child(CREATUREVIEWUI)
 
 func OnDrag() -> void:
-	AudioManager.playSoundAtLocation(global_position, "res://Assets/Audio/Pickup.wav")
+	AudioManager.playSoundAtLocation(global_position, pickupSound)
 	
 	isBoundToPlayer = true
 	SignalBus.BindCreatureToPlayer.emit(creatureRes)
@@ -66,7 +69,7 @@ func OnDrag() -> void:
 	%InteractArea.set_collision_mask_value(1, false)
 
 func OnDragEnd() -> void:
-	AudioManager.playSoundAtLocation(global_position, "res://Assets/Audio/Drop.wav")
+	AudioManager.playSoundAtLocation(global_position, dropSound)
 	
 	isBoundToPlayer = false
 	
