@@ -1,8 +1,8 @@
 [gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://b1xenlah75lik"]
 
-[ext_resource type="FontFile" uid="uid://j6bp3xkv6see" path="res://Assets/Font/JacquardaBastarda9-Regular.ttf" id="1_apu2x"]
+[ext_resource type="FontFile" uid="uid://bxgja5q17kmv4" path="res://Assets/Font/Macondo-Regular.ttf" id="1_l0gmp"]
 
 [resource]
-base_font = ExtResource("1_apu2x")
+base_font = ExtResource("1_l0gmp")
 variation_embolden = 0.25
 variation_transform = Transform2D(1, 0.25, 0, 1, 0, 0)
