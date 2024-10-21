@@ -1,6 +1,6 @@
 extends Node
 
-var money : int = 25
+var money : int = 0
 var multiplier : float = 15.0
 
 func addMoney(inMoney : int) -> void:

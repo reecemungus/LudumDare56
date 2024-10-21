@@ -33,7 +33,7 @@ var screenFadeScene := preload("res://Scenes/screen_fade.tscn")
 var screenFade : ScreenFade
 
 func _ready() -> void:
-	get_window().min_size = Vector2(960, 540)
+	get_window().min_size = get_window().size
 	
 	var tempFade = screenFadeScene.instantiate()
 	add_child(tempFade)

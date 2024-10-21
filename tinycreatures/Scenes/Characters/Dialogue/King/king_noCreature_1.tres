@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://c7ilqqg72v3wd"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_w80ny"]
+
+[resource]
+script = ExtResource("1_w80ny")
+dialogue = Array[String](["Good day, Father. ", "I pray your research flourishes, though next time you visit, bring to me one of your creations."])

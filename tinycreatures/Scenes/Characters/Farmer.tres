@@ -1,13 +1,31 @@
-[gd_resource type="Resource" script_class="NPC" load_steps=5 format=3 uid="uid://csyj3tu7dqc16"]
+[gd_resource type="Resource" script_class="NPC" load_steps=17 format=3 uid="uid://csyj3tu7dqc16"]
 
-[ext_resource type="PackedScene" uid="uid://ccvi4qc0ebdru" path="res://Scenes/UI/FarmerShopUI.tscn" id="1_eddid"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="2_18tox"]
 [ext_resource type="Texture2D" uid="uid://5imqbpx7ph7i" path="res://Assets/CharacterSprites/Farmer.png" id="2_xo5sd"]
-[ext_resource type="PackedScene" uid="uid://bg5kqew78fxqj" path="res://Scenes/UI/FarmerUnavailable.tscn" id="3_8ctto"]
+[ext_resource type="Resource" uid="uid://crhsijc20a0vd" path="res://Scenes/Characters/Dialogue/Farmer/farmer_dialogue_0.tres" id="3_tr21j"]
 [ext_resource type="Script" path="res://Scripts/NPCs/NPC.gd" id="4_kfmoa"]
+[ext_resource type="Resource" uid="uid://bgo7073sgsq7d" path="res://Scenes/Characters/Dialogue/Farmer/farmer_dialogue_1.tres" id="4_x0shw"]
+[ext_resource type="Resource" uid="uid://cgq5wlhbyem75" path="res://Scenes/Characters/Dialogue/Farmer/farmer_dialogue_2.tres" id="5_c2wkc"]
+[ext_resource type="Resource" uid="uid://dm2ww00n01ie1" path="res://Scenes/Characters/Dialogue/Farmer/farmer_dialogue_3.tres" id="6_cul5p"]
+[ext_resource type="AudioStream" uid="uid://bdy1qmygrjtca" path="res://Assets/Audio/Dialogue/Squeak/squeak_0.wav" id="6_m51up"]
+[ext_resource type="Resource" uid="uid://bbfojihfrf5w4" path="res://Scenes/Characters/Dialogue/Farmer/farmer_intro.tres" id="7_fmmm7"]
+[ext_resource type="AudioStream" uid="uid://dp8pv3s6llss" path="res://Assets/Audio/Dialogue/Squeak/squeak_1.wav" id="7_npiak"]
+[ext_resource type="Resource" uid="uid://ci038n8o25wth" path="res://Scenes/Characters/Dialogue/Farmer/farmer_fail_0.tres" id="8_pf6po"]
+[ext_resource type="Resource" uid="uid://bov8adnj74gwr" path="res://Scenes/Characters/Dialogue/Farmer/farmer_noCreature_3.tres" id="13_pv8cj"]
+[ext_resource type="Resource" uid="uid://bb1hw7hdtp5wq" path="res://Scenes/Characters/Dialogue/Farmer/farmer_noCreature_2.tres" id="14_4hq5n"]
+[ext_resource type="Resource" uid="uid://bu7cn8s5d74eb" path="res://Scenes/Characters/Dialogue/Farmer/farmer_noCreature_1.tres" id="15_70r16"]
+[ext_resource type="Resource" uid="uid://ds1efvwmityxv" path="res://Scenes/Characters/Dialogue/Farmer/farmer_noCreature_0.tres" id="16_mcjel"]
+[ext_resource type="Resource" uid="uid://c3y0ycwgt40v0" path="res://Scenes/Characters/Dialogue/Farmer/farmer_ungrownCreature_0.tres" id="18_fx3q5"]
 
 [resource]
 script = ExtResource("4_kfmoa")
+Name = "Farmer"
 Sprite = ExtResource("2_xo5sd")
-NPCType = 0
-ShopkeeperScene = ExtResource("1_eddid")
-UnavailableScene = ExtResource("3_8ctto")
+dialogueSounds = Array[AudioStream]([ExtResource("6_m51up"), ExtResource("7_npiak")])
+firstDialogue = ExtResource("7_fmmm7")
+dialogues = Array[ExtResource("2_18tox")]([ExtResource("6_cul5p"), ExtResource("5_c2wkc"), ExtResource("4_x0shw"), ExtResource("3_tr21j")])
+noCreatureDialogues = Array[ExtResource("2_18tox")]([ExtResource("13_pv8cj"), ExtResource("14_4hq5n"), ExtResource("15_70r16"), ExtResource("16_mcjel")])
+ungrownCreatureDialogues = Array[ExtResource("2_18tox")]([ExtResource("18_fx3q5")])
+failDialogues = Array[ExtResource("2_18tox")]([ExtResource("8_pf6po")])
+needsCreature = true
+hasBeenMet = false

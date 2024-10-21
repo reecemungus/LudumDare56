@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bov8adnj74gwr"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_ay0cw"]
+
+[resource]
+script = ExtResource("1_ay0cw")
+dialogue = Array[String](["Ah, Father. Ye come without a creature today. ", "Still, I welcome ye."])

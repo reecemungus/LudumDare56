@@ -1,13 +1,31 @@
-[gd_resource type="Resource" script_class="NPC" load_steps=5 format=3 uid="uid://bous82rkxr62o"]
+[gd_resource type="Resource" script_class="NPC" load_steps=17 format=3 uid="uid://bous82rkxr62o"]
 
 [ext_resource type="Script" path="res://Scripts/NPCs/NPC.gd" id="1_3hm0l"]
 [ext_resource type="Texture2D" uid="uid://deglmasco8ne2" path="res://Assets/CharacterSprites/Alchemist.png" id="1_ptmg1"]
-[ext_resource type="PackedScene" uid="uid://dvdtrpuudi1ob" path="res://Scenes/UI/AlchemistShopUI.tscn" id="1_pyfuw"]
-[ext_resource type="PackedScene" uid="uid://dp7ttqypxbxuy" path="res://Scenes/UI/AlchemistUnavailable.tscn" id="3_irk81"]
+[ext_resource type="Resource" uid="uid://dlg02sy21hw0y" path="res://Scenes/Characters/Dialogue/Alchemist/alchemist_dialogue_0.tres" id="3_01rec"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="3_8n6l5"]
+[ext_resource type="Resource" uid="uid://bbnb51ymo2mkk" path="res://Scenes/Characters/Dialogue/Alchemist/alchemist_dialogue_4.tres" id="3_il7nk"]
+[ext_resource type="AudioStream" uid="uid://dng72755wgsn0" path="res://Assets/Audio/Dialogue/Splat/splat_0.wav" id="4_0uxb3"]
+[ext_resource type="Resource" uid="uid://bx6o7llxv6f73" path="res://Scenes/Characters/Dialogue/Alchemist/alchemist_dialogue_3.tres" id="4_3am8l"]
+[ext_resource type="Resource" uid="uid://o070c5qfhok5" path="res://Scenes/Characters/Dialogue/Alchemist/alchemist_dialogue_1.tres" id="4_rqh4y"]
+[ext_resource type="AudioStream" uid="uid://c5of54hnfc552" path="res://Assets/Audio/Dialogue/Splat/splat_1.wav" id="5_0yntk"]
+[ext_resource type="Resource" uid="uid://dun2ao1b3qx0l" path="res://Scenes/Characters/Dialogue/Alchemist/alchemist_dialogue_2.tres" id="5_rlt0t"]
+[ext_resource type="Resource" uid="uid://dvvgtu1nhmwh0" path="res://Scenes/Characters/Dialogue/Alchemist/alchemist_intro.tres" id="6_2m5r2"]
+[ext_resource type="Resource" uid="uid://csp8tcet05pdu" path="res://Scenes/Characters/Dialogue/Alchemist/alchemist_fail_0.tres" id="10_b800k"]
+[ext_resource type="Resource" uid="uid://gagygqeknde5" path="res://Scenes/Characters/Dialogue/Alchemist/alchemist_noCreature_2.tres" id="12_efutn"]
+[ext_resource type="Resource" uid="uid://dj6asqldt8b76" path="res://Scenes/Characters/Dialogue/Alchemist/alchemist_noCreature_1.tres" id="13_6q14d"]
+[ext_resource type="Resource" uid="uid://dgifs0yxxwah7" path="res://Scenes/Characters/Dialogue/Alchemist/alchemist_noCreature_0.tres" id="14_hblk6"]
+[ext_resource type="Resource" uid="uid://c4lxhwmlplabr" path="res://Scenes/Characters/Dialogue/Alchemist/alchemist_ungrownCreature_0.tres" id="16_4ifwx"]
 
 [resource]
 script = ExtResource("1_3hm0l")
+Name = "Alchemist"
 Sprite = ExtResource("1_ptmg1")
-NPCType = 1
-ShopkeeperScene = ExtResource("1_pyfuw")
-UnavailableScene = ExtResource("3_irk81")
+dialogueSounds = Array[AudioStream]([ExtResource("4_0uxb3"), ExtResource("5_0yntk")])
+firstDialogue = ExtResource("6_2m5r2")
+dialogues = Array[ExtResource("3_8n6l5")]([ExtResource("3_il7nk"), ExtResource("4_3am8l"), ExtResource("5_rlt0t"), ExtResource("4_rqh4y"), ExtResource("3_01rec")])
+noCreatureDialogues = Array[ExtResource("3_8n6l5")]([ExtResource("12_efutn"), ExtResource("13_6q14d"), ExtResource("14_hblk6")])
+ungrownCreatureDialogues = Array[ExtResource("3_8n6l5")]([ExtResource("16_4ifwx")])
+failDialogues = Array[ExtResource("3_8n6l5")]([ExtResource("10_b800k")])
+needsCreature = true
+hasBeenMet = false

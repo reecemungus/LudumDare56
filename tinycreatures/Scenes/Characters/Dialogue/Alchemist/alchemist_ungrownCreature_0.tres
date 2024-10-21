@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://c4lxhwmlplabr"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_g1v86"]
+
+[resource]
+script = ExtResource("1_g1v86")
+dialogue = Array[String](["Ah Father, that creature you bring is but a child.", "I shall not experiment on it, It's just not right.", "Bring it back once it's grown, then we can get to work."])

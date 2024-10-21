@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dvvgtu1nhmwh0"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="3_f8qdh"]
+
+[resource]
+script = ExtResource("3_f8qdh")
+dialogue = Array[String](["A blessed day upon thee, Father. I am The King's Alchemist.", "I am here to help you augment your creations. Each day, I will have a new stock of potions that you may purchase.", "If your goal is to create the perfect life form, you would be wise to take advantage of my work.", "Please, let me return to my preparations, if you need anything I shall be here."])

@@ -8,8 +8,8 @@ func _ready() -> void:
 	SignalBus.FadeOut.connect(FadeOut)
 	SignalBus.Sleep.connect(OnPlayerSlept)
 	
-	#if OS.has_feature("editor"):
-		#visible = false
+	if OS.has_feature("editor"):
+		visible = false
 
 func OnPlayerSlept() -> void:
 	%AnimationPlayer.current_animation = "SleepFade"

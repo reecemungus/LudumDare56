@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bbfojihfrf5w4"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_nqb4i"]
+
+[resource]
+script = ExtResource("1_nqb4i")
+dialogue = Array[String](["Well met, Father. What brings ye to my humble workshop?", "I tell ye what, bring me some of those monstrosities yer growing in that there plot of land. I will take em from you, Father, for a fair price might I add.", "Those unwanted critters will find themselves a new home, I shan't tell ye where, but you'll leave with coin in yer pocket all the same."])

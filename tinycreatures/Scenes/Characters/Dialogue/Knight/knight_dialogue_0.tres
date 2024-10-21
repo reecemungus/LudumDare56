@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://ca1kepdhx8vog"]
+
+[ext_resource type="PackedScene" uid="uid://4fq1au7kbbl6" path="res://Scenes/Characters/Dialogue/Knight/KnightScene.tscn" id="1_6f5tu"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_ang5q"]
+
+[resource]
+script = ExtResource("1_ang5q")
+dialogue = Array[String](["Monk. Do you require another Seed?"])
+nextScene = ExtResource("1_6f5tu")

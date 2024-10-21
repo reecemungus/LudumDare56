@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://crx6wwvgje66u"]
+[gd_scene load_steps=15 format=3 uid="uid://crx6wwvgje66u"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerController.gd" id="1_hqtrt"]
 [ext_resource type="Texture2D" uid="uid://03aa8irigggt" path="res://Assets/CharacterSprites/Monk.png" id="1_qdqdo"]
 [ext_resource type="PackedScene" uid="uid://bhw1fexc1dpwf" path="res://Scenes/UI/PlayerHUD.tscn" id="2_2a88j"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerAnimation.gd" id="2_gxijk"]
+[ext_resource type="Texture2D" uid="uid://c750ssdamkp5" path="res://Assets/Lighting/CharacterLight.png" id="5_g0emi"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xq23m"]
 animation = &"WalkAnim"
@@ -271,6 +272,14 @@ limit_bottom = 192
 position_smoothing_enabled = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
+light_mask = 2
 y_sort_enabled = true
 texture = ExtResource("1_qdqdo")
 offset = Vector2(0, -6.5)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 1, 1, 0.784314)
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 0.5
+texture = ExtResource("5_g0emi")

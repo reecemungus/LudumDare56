@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://cyfc15h3t4wj8"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_2fctj"]
+
+[resource]
+script = ExtResource("1_2fctj")
+dialogue = Array[String](["You lack the coin, Monk. Return with 5 Gold Pieces in hand.", "If gold eludes you, take one of your creations and seek The Farmer. ", "I hear he pays well for their flesh. I wish not to know why."])

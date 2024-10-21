@@ -82,6 +82,7 @@ shape = SubResource("CircleShape2D_5qlkt")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+light_mask = 2
 texture = ExtResource("1_wte48")
 offset = Vector2(0, -8)
 

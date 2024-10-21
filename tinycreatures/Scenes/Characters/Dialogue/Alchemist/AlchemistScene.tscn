@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://suvrbgmp2ufc"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/AlchemistScene.gd" id="1_mx661"]
+
+[node name="AlchemistScene" type="Node"]
+script = ExtResource("1_mx661")

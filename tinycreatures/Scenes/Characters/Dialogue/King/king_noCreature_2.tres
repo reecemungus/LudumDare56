@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://7vf723q1ix0x"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_svsgg"]
+
+[resource]
+script = ExtResource("1_svsgg")
+dialogue = Array[String](["Welcome Father, I trust you are fulfilling your duties with great vigor.", "I hear the whispers of your creations, their voices growing stronger with each passing day.", "One of them shall lead my armies one day, this I know to be true."])

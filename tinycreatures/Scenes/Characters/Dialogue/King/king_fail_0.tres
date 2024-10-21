@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bxg371ejsyxc3"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_cw5f4"]
+
+[resource]
+script = ExtResource("1_cw5f4")
+dialogue = Array[String](["Father, we should not be talking right now.", "Something has been done wrong. I suspect Reece has fucked something up.", "He will be banished from my Kingdom for this."])

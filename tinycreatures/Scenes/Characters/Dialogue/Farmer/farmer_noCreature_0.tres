@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://ds1efvwmityxv"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_6vjlm"]
+
+[resource]
+script = ExtResource("1_6vjlm")
+name = "The Farmer"
+dialogue = Array[String](["You forgot to bring me a creature, dont be silly", "Bring me one then"])

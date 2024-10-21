@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm0vhiwp4e3at"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/FarmerScene.gd" id="1_82cl2"]
+
+[node name="FarmerScene" type="Node"]
+script = ExtResource("1_82cl2")

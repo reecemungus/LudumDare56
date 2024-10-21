@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dv0tdi5dftwrl"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_2n7ec"]
+
+[resource]
+script = ExtResource("1_2n7ec")
+dialogue = Array[String](["Do not waste my time, Monk.", "Return with the gold I require, then you may have a Seed."])

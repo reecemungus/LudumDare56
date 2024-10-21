@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://dun2ao1b3qx0l"]
+
+[ext_resource type="PackedScene" uid="uid://suvrbgmp2ufc" path="res://Scenes/Characters/Dialogue/Alchemist/AlchemistScene.tscn" id="1_byjiv"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="2_g05k4"]
+
+[resource]
+script = ExtResource("2_g05k4")
+name = "The Alchemist"
+dialogue = Array[String](["Father."])
+nextScene = ExtResource("1_byjiv")

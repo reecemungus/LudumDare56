@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bb1hw7hdtp5wq"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_68ikg"]
+
+[resource]
+script = ExtResource("1_68ikg")
+dialogue = Array[String](["Greetings, Father! I see ye've come without a creature to part with. Not to worry! ", "Sometimes the best treasures are found in the stories we tell. What news do ye bring?"])

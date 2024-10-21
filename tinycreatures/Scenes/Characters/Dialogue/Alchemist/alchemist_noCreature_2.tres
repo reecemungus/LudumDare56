@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://gagygqeknde5"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_3clam"]
+
+[resource]
+script = ExtResource("1_3clam")
+dialogue = Array[String](["Father. What brings you here, without one of your creations in tow?", "Please, don't drink my potions, they are not made for you. The Holy Elixir is the only one you may consume.", "It will enhance your ability to nurture these creatures, with your presence alone. Please, try one."])

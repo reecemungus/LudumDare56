@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://vp4hrq2b7kkc"]
+
+[ext_resource type="FontVariation" uid="uid://b1xenlah75lik" path="res://Assets/UI/Theme/GothicFont.tres" id="1_bddr8"]
+[ext_resource type="StyleBox" uid="uid://bcg3l5yhio6vu" path="res://Assets/UI/Theme/DialogueBox.tres" id="1_xgbje"]
+
+[resource]
+Button/font_sizes/font_size = 18
+Button/fonts/font = ExtResource("1_bddr8")
+Button/styles/disabled = ExtResource("1_xgbje")
+Button/styles/focus = ExtResource("1_xgbje")
+Button/styles/hover = ExtResource("1_xgbje")
+Button/styles/normal = ExtResource("1_xgbje")
+Button/styles/pressed = ExtResource("1_xgbje")
+Label/font_sizes/font_size = 18
+Label/fonts/font = ExtResource("1_bddr8")
+PanelContainer/styles/panel = ExtResource("1_xgbje")

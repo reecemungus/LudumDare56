@@ -1,11 +1,30 @@
-[gd_resource type="Resource" script_class="NPC" load_steps=4 format=3 uid="uid://del4le2aiv0gi"]
+[gd_resource type="Resource" script_class="NPC" load_steps=16 format=3 uid="uid://del4le2aiv0gi"]
 
 [ext_resource type="Texture2D" uid="uid://ouvkx7itne4n" path="res://Assets/CharacterSprites/Knight.png" id="1_gawvr"]
-[ext_resource type="PackedScene" uid="uid://ci3jp78hh2pab" path="res://Scenes/UI/KnightShopUI.tscn" id="1_hqoix"]
 [ext_resource type="Script" path="res://Scripts/NPCs/NPC.gd" id="1_kr3ou"]
+[ext_resource type="AudioStream" uid="uid://byon1nu65j8f6" path="res://Assets/Audio/Dialogue/Pop/pop_0.wav" id="2_qxuwd"]
+[ext_resource type="AudioStream" uid="uid://c6u03cbqw5hvl" path="res://Assets/Audio/Dialogue/Pop/pop_1.wav" id="3_76tqn"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="3_adlkg"]
+[ext_resource type="Resource" uid="uid://ca1kepdhx8vog" path="res://Scenes/Characters/Dialogue/Knight/knight_dialogue_0.tres" id="3_r38am"]
+[ext_resource type="Resource" uid="uid://dyfgka6n7350g" path="res://Scenes/Characters/Dialogue/Knight/knight_dialogue_1.tres" id="4_gmvum"]
+[ext_resource type="Resource" uid="uid://cyfc15h3t4wj8" path="res://Scenes/Characters/Dialogue/Knight/knight_fail_0.tres" id="4_virpa"]
+[ext_resource type="Resource" uid="uid://c26xt2jyjr8nq" path="res://Scenes/Characters/Dialogue/Knight/knight_dialogue_2.tres" id="5_k7cn3"]
+[ext_resource type="Resource" uid="uid://cimr1oydc7xtl" path="res://Scenes/Characters/Dialogue/Knight/knight_dialogue_3.tres" id="6_pllsq"]
+[ext_resource type="Resource" uid="uid://d24dyy00w4rmd" path="res://Scenes/Characters/Dialogue/Knight/knight_fail_1.tres" id="8_kle6k"]
+[ext_resource type="Resource" uid="uid://dv0tdi5dftwrl" path="res://Scenes/Characters/Dialogue/Knight/knight_fail_2.tres" id="9_5prfv"]
+[ext_resource type="Resource" uid="uid://da3eek66sreta" path="res://Scenes/Characters/Dialogue/Knight/knight_intro.tres" id="10_kul60"]
+[ext_resource type="Resource" uid="uid://oyjugr7jhqdy" path="res://Scenes/Characters/Dialogue/Knight/knight_noCreature_0.tres" id="11_v3eph"]
+[ext_resource type="Resource" uid="uid://bvba0d8av0hi3" path="res://Scenes/Characters/Dialogue/Knight/knight_ungrownCreature_0.tres" id="21_ikwkj"]
 
 [resource]
 script = ExtResource("1_kr3ou")
+Name = "Knight"
 Sprite = ExtResource("1_gawvr")
-NPCType = 2
-ShopkeeperScene = ExtResource("1_hqoix")
+dialogueSounds = Array[AudioStream]([ExtResource("2_qxuwd"), ExtResource("3_76tqn")])
+firstDialogue = ExtResource("10_kul60")
+dialogues = Array[ExtResource("3_adlkg")]([ExtResource("6_pllsq"), ExtResource("5_k7cn3"), ExtResource("4_gmvum"), ExtResource("3_r38am")])
+noCreatureDialogues = Array[ExtResource("3_adlkg")]([ExtResource("11_v3eph")])
+ungrownCreatureDialogues = Array[ExtResource("3_adlkg")]([ExtResource("21_ikwkj")])
+failDialogues = Array[ExtResource("3_adlkg")]([ExtResource("9_5prfv"), ExtResource("8_kle6k"), ExtResource("4_virpa")])
+needsCreature = false
+hasBeenMet = false

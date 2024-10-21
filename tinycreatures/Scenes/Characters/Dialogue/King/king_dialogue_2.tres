@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://b6tn7xfa2d327"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_5m43k"]
+
+[resource]
+script = ExtResource("1_5m43k")
+dialogue = Array[String](["Ah, Father. I hope you are well.", "What hast thou brought with you? This one is not so pleasing to the eyes.", "Alas, maybe it will be worthy still, of inheriting this Kingdom. May I?"])

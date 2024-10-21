@@ -13,6 +13,8 @@ var boundCreature : Creature
 var footstepSound : AudioStream = preload("res://Assets/Audio/FootStep.wav")
 
 func _ready() -> void:
+	SignalBus.UpdateGoldCount.emit()
+	
 	SignalBus.FreezePlayer.connect(FreezePlayer)
 	SignalBus.BindCreatureToPlayer.connect(BindCreature)
 	SignalBus.OnPlayerReleaseCreature.connect(ClearBoundCreature)

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://crhsijc20a0vd"]
+
+[ext_resource type="PackedScene" uid="uid://dm0vhiwp4e3at" path="res://Scenes/Characters/Dialogue/Farmer/FarmerScene.tscn" id="1_evbpm"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_v8ems"]
+
+[resource]
+script = ExtResource("1_v8ems")
+name = "The Farmer"
+dialogue = Array[String](["What's up"])
+nextScene = ExtResource("1_evbpm")

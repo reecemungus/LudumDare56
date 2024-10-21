@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://btf3qpbi1vyey"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_kjfq0"]
+
+[resource]
+script = ExtResource("1_kjfq0")
+dialogue = Array[String](["Tell me Father, is the job done?"])

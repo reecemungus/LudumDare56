@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://dlg02sy21hw0y"]
+
+[ext_resource type="PackedScene" uid="uid://suvrbgmp2ufc" path="res://Scenes/Characters/Dialogue/Alchemist/AlchemistScene.tscn" id="1_34w1p"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="2_kcaai"]
+
+[resource]
+script = ExtResource("2_kcaai")
+dialogue = Array[String](["Father, I see you hath brought forth one of your creations.", "A curious thing indeed. Would you care "])
+nextScene = ExtResource("1_34w1p")

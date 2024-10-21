@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://bbnb51ymo2mkk"]
+
+[ext_resource type="PackedScene" uid="uid://suvrbgmp2ufc" path="res://Scenes/Characters/Dialogue/Alchemist/AlchemistScene.tscn" id="1_48dra"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="2_ge063"]
+
+[resource]
+script = ExtResource("2_ge063")
+dialogue = Array[String](["The art of creation is not for the faint-hearted, but with a skilled hand and the right potion, one might bring forth wonders. ", "Have you come to claim one, Father?"])
+nextScene = ExtResource("1_48dra")

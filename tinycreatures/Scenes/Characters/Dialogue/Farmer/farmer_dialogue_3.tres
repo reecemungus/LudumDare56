@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://dm2ww00n01ie1"]
+
+[ext_resource type="PackedScene" uid="uid://dm0vhiwp4e3at" path="res://Scenes/Characters/Dialogue/Farmer/FarmerScene.tscn" id="1_shn4m"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="2_njy3w"]
+
+[resource]
+script = ExtResource("2_njy3w")
+dialogue = Array[String](["Well met, Father! If that creature no longer serves ye, bring it forth! ", "I’ll take it under my wing and offer ye a fair handful of coin in return."])
+nextScene = ExtResource("1_shn4m")

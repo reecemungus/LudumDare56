@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dj6asqldt8b76"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_ua0v6"]
+
+[resource]
+script = ExtResource("1_ua0v6")
+dialogue = Array[String](["Good day, Father. I hope your work remains successful. ", "I shan't sell you any potions right now, I know not what effect it may have on you.", "They are to be given to your creatures only, except the Holy Elixir of course."])

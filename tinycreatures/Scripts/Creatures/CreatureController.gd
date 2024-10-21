@@ -24,6 +24,8 @@ var speakSounds : Array[AudioStream] = [
 var pickupSound : AudioStream = preload("res://Assets/Audio/Pickup.wav")
 var dropSound : AudioStream = preload("res://Assets/Audio/Drop.wav")
 
+var deathParticleScene : PackedScene = preload("res://Scenes/Particles/CreatureDeathParticles.tscn")
+
 func _ready() -> void:	
 	SignalBus.CreatureUpdateSprite.connect(UpdateSprite)
 	SignalBus.OnPlayerReleaseCreature.connect(OnDragEnd)
@@ -78,6 +80,10 @@ func OnDragEnd() -> void:
 
 func KillBoundCreature() -> void:
 	if isBoundToPlayer:
+		var deathPart = deathParticleScene.instantiate()
+		player.add_child(deathPart)
+		deathPart.global_position = global_position
+		
 		queue_free()
 
 func ConstrainDistance(point : Vector2, anchor : Vector2, distance : float) -> Vector2:

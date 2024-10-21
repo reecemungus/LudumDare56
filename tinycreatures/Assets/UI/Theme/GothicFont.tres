@@ -4,5 +4,5 @@
 
 [resource]
 base_font = ExtResource("1_l0gmp")
-variation_embolden = 0.25
+variation_embolden = 0.75
 variation_transform = Transform2D(1, 0.25, 0, 1, 0, 0)

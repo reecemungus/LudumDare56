@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dedny5447cdyc"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_oj3oe"]
+
+[resource]
+script = ExtResource("1_oj3oe")
+name = "The King"
+dialogue = Array[String](["Whats Up"])

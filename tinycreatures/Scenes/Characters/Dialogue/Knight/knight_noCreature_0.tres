@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://oyjugr7jhqdy"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_p86mv"]
+
+[resource]
+script = ExtResource("1_p86mv")
+dialogue = Array[String](["I don't know why I wont serve you, Monk.", "Please get in touch with the Developer and tell him to fix this.", "What a fucking idiot."])

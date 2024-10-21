@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyk2yyi7lnrwy"]
+
+[ext_resource type="Theme" uid="uid://vp4hrq2b7kkc" path="res://Assets/UI/Theme/DialogueTheme.tres" id="1_sp6pc"]
+[ext_resource type="Script" path="res://Scripts/UI/DialogueUI.gd" id="2_laps2"]
+[ext_resource type="PackedScene" uid="uid://ih414v0h2ny0" path="res://Scenes/UI/Dialogue/DialogueButtons.tscn" id="4_ausks"]
+[ext_resource type="PackedScene" uid="uid://bxprak1beoun0" path="res://Scenes/UI/Dialogue/DialogueTextUI.tscn" id="5_eyv5y"]
+
+[node name="DialogueUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_sp6pc")
+script = ExtResource("2_laps2")
+
+[node name="NameContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.552778
+anchor_right = 0.279687
+anchor_bottom = 0.647222
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_sp6pc")
+metadata/_edit_use_anchors_ = true
+
+[node name="NameLabel" type="Label" parent="NameContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Character Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.66
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_sp6pc")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="TextContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="DialogueButtons" parent="TextContainer/MarginContainer" instance=ExtResource("4_ausks")]
+visible = false
+layout_mode = 2
+
+[node name="DialogueText" parent="TextContainer/MarginContainer" instance=ExtResource("5_eyv5y")]
+layout_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="TextTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="TextTimer" to="." method="_on_text_timer_timeout"]

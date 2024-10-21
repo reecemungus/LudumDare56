@@ -2,29 +2,33 @@ extends Node
 
 @export var npc : NPC
 
-var activeUI
-
 func _ready() -> void:
 	%Sprite.texture = npc.Sprite
 
 func OnInteract() -> void:
-	var player : PlayerController = get_tree().get_first_node_in_group("G_PlayerController")
-	var playerHUD : CanvasLayer = get_tree().get_first_node_in_group("G_PlayerHUD")
+	var dialogueToRun : Dialogue = null
 	
-	if npc.ShopkeeperScene:
-		if npc.NPCType == Game.NPCID.KNIGHT:
-			if !activeUI:
-				activeUI = npc.ShopkeeperScene.instantiate()
-				playerHUD.add_child(activeUI)
-				return
-		
-		if player.boundCreature == null or player.boundCreature.GrowthStage != Game.GrowthStage.GROWN:
-			if !activeUI:
-				activeUI = npc.UnavailableScene.instantiate()
-				playerHUD.add_child(activeUI)
-				return
-		
-		if !activeUI:
-			activeUI = npc.ShopkeeperScene.instantiate()
-			playerHUD.add_child(activeUI)
+	if !npc.hasBeenMet:
+		DialogueManager.RunDialogue.emit(npc, npc.firstDialogue)
+		npc.hasBeenMet = true
+	else:
+		if npc.needsCreature:
+			var player : PlayerController = get_tree().get_first_node_in_group("G_PlayerController")
+			
+			if player.boundCreature:
+				if player.boundCreature.GrowthStage == Game.GrowthStage.GROWN: 
+					dialogueToRun = npc.dialogues[randi_range(0, npc.dialogues.size() - 1)]
+					DialogueManager.RunDialogue.emit(npc, dialogueToRun)
+					return
+				else:
+					dialogueToRun = npc.ungrownCreatureDialogues[randi_range(0, npc.ungrownCreatureDialogues.size() - 1)]
+					DialogueManager.RunDialogue.emit(npc, dialogueToRun)
+					return
+			
+			var turnawayDialogue : Dialogue = npc.noCreatureDialogues[randi_range(0, npc.noCreatureDialogues.size() - 1)]
+			DialogueManager.RunDialogue.emit(npc, turnawayDialogue)
 			return
+		
+		dialogueToRun = npc.dialogues[randi_range(0, npc.dialogues.size() - 1)]
+		DialogueManager.RunDialogue.emit(npc, dialogueToRun)
+		return

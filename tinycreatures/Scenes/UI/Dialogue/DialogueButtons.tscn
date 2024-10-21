@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://ih414v0h2ny0"]
+
+[ext_resource type="Theme" uid="uid://vp4hrq2b7kkc" path="res://Assets/UI/Theme/DialogueTheme.tres" id="1_kijaa"]
+[ext_resource type="Script" path="res://Scripts/HoverUI.gd" id="2_3f4ar"]
+
+[node name="DialogueButtons" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Accept" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_kijaa")
+text = "Yes"
+script = ExtResource("2_3f4ar")
+
+[node name="Decline" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_kijaa")
+text = "No"
+script = ExtResource("2_3f4ar")
+
+[connection signal="mouse_entered" from="Accept" to="Accept" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Accept" to="Accept" method="_on_mouse_exited"]
+[connection signal="resized" from="Accept" to="Accept" method="_on_resized"]
+[connection signal="mouse_entered" from="Decline" to="Decline" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Decline" to="Decline" method="_on_mouse_exited"]
+[connection signal="resized" from="Decline" to="Decline" method="_on_resized"]

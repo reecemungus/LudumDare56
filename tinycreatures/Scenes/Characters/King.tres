@@ -1,13 +1,33 @@
-[gd_resource type="Resource" script_class="NPC" load_steps=5 format=3 uid="uid://dlxb68fdmkkoq"]
+[gd_resource type="Resource" script_class="NPC" load_steps=19 format=3 uid="uid://dlxb68fdmkkoq"]
 
-[ext_resource type="PackedScene" uid="uid://dowxsvarm5kl1" path="res://Scenes/UI/KingShopUI.tscn" id="1_8tx5c"]
 [ext_resource type="Texture2D" uid="uid://dwsaenhq8ft1l" path="res://Assets/CharacterSprites/King.png" id="1_ayy21"]
 [ext_resource type="Script" path="res://Scripts/NPCs/NPC.gd" id="1_qr6kt"]
-[ext_resource type="PackedScene" uid="uid://b2kydot5oa74r" path="res://Scenes/UI/KingUnavailable.tscn" id="3_ftx8i"]
+[ext_resource type="AudioStream" uid="uid://b3f8e52uvvtmc" path="res://Assets/Audio/Dialogue/King/King_0.wav" id="4_epb0u"]
+[ext_resource type="AudioStream" uid="uid://uwtpn6w3jx2j" path="res://Assets/Audio/Dialogue/King/King_1.wav" id="5_uk8jf"]
+[ext_resource type="AudioStream" uid="uid://c0vxsnw8uespd" path="res://Assets/Audio/Dialogue/King/King_2.wav" id="6_80g2u"]
+[ext_resource type="AudioStream" uid="uid://c8lq0apsjea38" path="res://Assets/Audio/Dialogue/King/King_3.wav" id="7_2oc3i"]
+[ext_resource type="Resource" uid="uid://dedny5447cdyc" path="res://Scenes/Characters/Dialogue/King/king_dialogue_0.tres" id="8_1ibtr"]
+[ext_resource type="AudioStream" uid="uid://blg0xa1sn80wt" path="res://Assets/Audio/Dialogue/King/King_4.wav" id="8_bokcp"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="8_r2q0c"]
+[ext_resource type="Resource" uid="uid://btf3qpbi1vyey" path="res://Scenes/Characters/Dialogue/King/king_dialogue_1.tres" id="9_t6fyq"]
+[ext_resource type="Resource" uid="uid://b6tn7xfa2d327" path="res://Scenes/Characters/Dialogue/King/king_dialogue_2.tres" id="10_l4p43"]
+[ext_resource type="Resource" uid="uid://w3steojc3myd" path="res://Scenes/Characters/Dialogue/King/king_dialogue_3.tres" id="11_2yd1v"]
+[ext_resource type="Resource" uid="uid://jlkp361mxg8a" path="res://Scenes/Characters/Dialogue/King/king_intro.tres" id="12_huiyk"]
+[ext_resource type="Resource" uid="uid://bxg371ejsyxc3" path="res://Scenes/Characters/Dialogue/King/king_fail_0.tres" id="12_o23vc"]
+[ext_resource type="Resource" uid="uid://u1cadheuvtav" path="res://Scenes/Characters/Dialogue/King/king_noCreature_3.tres" id="14_2hpvy"]
+[ext_resource type="Resource" uid="uid://7vf723q1ix0x" path="res://Scenes/Characters/Dialogue/King/king_noCreature_2.tres" id="15_r6nf6"]
+[ext_resource type="Resource" uid="uid://c7ilqqg72v3wd" path="res://Scenes/Characters/Dialogue/King/king_noCreature_1.tres" id="16_45yjk"]
+[ext_resource type="Resource" uid="uid://cgvsu45mwwd3n" path="res://Scenes/Characters/Dialogue/King/king_noCreature_0.tres" id="17_g7gqh"]
 
 [resource]
 script = ExtResource("1_qr6kt")
+Name = "King"
 Sprite = ExtResource("1_ayy21")
-NPCType = 3
-ShopkeeperScene = ExtResource("1_8tx5c")
-UnavailableScene = ExtResource("3_ftx8i")
+dialogueSounds = Array[AudioStream]([ExtResource("4_epb0u"), ExtResource("5_uk8jf"), ExtResource("6_80g2u"), ExtResource("7_2oc3i"), ExtResource("8_bokcp")])
+firstDialogue = ExtResource("12_huiyk")
+dialogues = Array[ExtResource("8_r2q0c")]([ExtResource("11_2yd1v"), ExtResource("10_l4p43"), ExtResource("9_t6fyq"), ExtResource("8_1ibtr")])
+noCreatureDialogues = Array[ExtResource("8_r2q0c")]([ExtResource("14_2hpvy"), ExtResource("15_r6nf6"), ExtResource("16_45yjk"), ExtResource("17_g7gqh")])
+ungrownCreatureDialogues = Array[ExtResource("8_r2q0c")]([])
+failDialogues = Array[ExtResource("8_r2q0c")]([ExtResource("12_o23vc")])
+needsCreature = true
+hasBeenMet = false

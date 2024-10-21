@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://jlkp361mxg8a"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="1_lse65"]
+
+[resource]
+script = ExtResource("1_lse65")
+dialogue = Array[String](["Ah, Father, a good day to you! I trust the comforts of our grounds feel familiar to one of your station. ", "I pray the halls and fields of my Grounds have become familiar to you, and that you have had ample time to acquaint yourself with my other faithful servants.", "For you are now among the stewards of this kingdom's future. I eagerly await the sight of your progress."])

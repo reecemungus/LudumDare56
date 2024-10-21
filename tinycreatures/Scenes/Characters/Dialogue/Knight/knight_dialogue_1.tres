@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://dyfgka6n7350g"]
+
+[ext_resource type="PackedScene" uid="uid://4fq1au7kbbl6" path="res://Scenes/Characters/Dialogue/Knight/KnightScene.tscn" id="1_nn1qo"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/Dialogue.gd" id="2_k7hj7"]
+
+[resource]
+script = ExtResource("2_k7hj7")
+dialogue = Array[String](["Monk. Do you seek another Seed, or have your endeavors finally yielded a worthy heir for His Highness?"])
+nextScene = ExtResource("1_nn1qo")
